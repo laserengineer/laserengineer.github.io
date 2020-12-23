@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "LabVIEW Yang"
-  avatar           : /assets/images/laserrainbow.png # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : /assets/images/laser-interferance-hero.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "An L&L Engineer (**laser**&**LabVIEW**)."
   location         : "Canada"
   email            :
