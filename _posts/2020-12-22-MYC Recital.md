@@ -11,7 +11,7 @@ tags:
   - Piano
 ---
 
-### YouTube
+### 2020 MYC Christmas Recital
 
 Daniel's good work on MYC Christmas Recital, played Canon in D and Minuet in G.
 
@@ -22,5 +22,3 @@ Daniel's good work on MYC Christmas Recital, played Canon in D and Minuet in G.
 ```
 
 {% include video id="AMCY9D8b5IQ" provider="youtube" %}
-
-To embed it as a video header you'd use the following YAML Front Matter
