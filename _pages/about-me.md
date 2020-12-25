@@ -1,13 +1,35 @@
 ---
-permalink: /about-me/
-title: "About me"
 layout: splash
+permalink: /about me/
+title: "About me"
 ---
 
+## Who am I
+From some official records, I am:
+- LabVIEW Architect
+- Professional Engineer associated with APEGA
+- Master of Science in Photonics and Plasma with ECE UofA
 
+## Who really am I
+- A Father of My Boys
+- A Husband of My Wife
+- A Son of My Parents
 
-## Notable Features
+## Who really really am I
+### For my Wife
+```
+- Handyman for fixing computer, cars and home appliances
+```
+### For my Boys
+```
+- Soccer Coach
+- Basketball Coach
+- Hockey Coach
+- Piano buddy
+- Science and math adventure partner
+```
 
-- Bundled as a "theme gem" for easier install/upgrading.
-- Compatible with GitHub Pages.
-- Support for Jekyll's built-in Sass/SCSS preprocessor.
+### For my Parents
+```
+- Pain in A?
+```

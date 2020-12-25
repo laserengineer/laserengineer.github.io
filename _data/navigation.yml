@@ -5,7 +5,7 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
-  - title: "Thesis"
-    url: /docs/Yang MSc certificate.pdf
-  - title: "About"
-    url: /about/
+  - title: "Research Work"
+    url: /Research Work/
+  - title: "About me"
+    url: /about me/
