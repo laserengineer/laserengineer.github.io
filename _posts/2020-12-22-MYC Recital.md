@@ -1,5 +1,5 @@
 ---
-title: "MYC Recital 圣诞节"
+title: "2020 MYC Christmas Show"
 header:
   video:
     id: AMCY9D8b5IQ
@@ -13,12 +13,10 @@ tags:
 
 ### 2020 MYC Christmas Recital
 
-Daniel's good work on MYC Christmas Recital, played Canon in D and Minuet in G.
+Daniel's performance for 2020 MYC Christmas online party.
+Two songs were played:
+- [x] Canon in D
+- [x] Minuet in G.
 
-
-
-```liquid
-{% raw %}{% include video id="AMCY9D8b5IQ" provider="youtube" %}{% endraw %}
-```
 
 {% include video id="AMCY9D8b5IQ" provider="youtube" %}
