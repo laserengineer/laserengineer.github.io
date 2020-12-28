@@ -23,7 +23,13 @@ github_username: username
 minimal_mistakes_skin: dark  #  "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise
 search: true
 teaser: /assets/images/500x300.png
-
+words_per_minute         : 200
+environment: production
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-light" # "github-dark"
+    issue_term: "pathname"
 
 # Build settings
 markdown: kramdown
@@ -33,7 +39,7 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-repository:
+repository: "laserengineer/laserengineer.github.io"
 github: [metadata]
 include:
   - _pages
@@ -84,14 +90,19 @@ defaults:
       read_time: false
       comments: true
       share: true
+      header:
+        image: /assets/images/laserspace.jpg #the image at the top of the page
       related: true
   # _pages
   - scope:
       path: "_pages"
       type: pages
+      header:
+        image: /assets/images/laserspace.jpg #the image at the top of the page
     values:
       layout: single
       author_profile: true
+      comments: true
 
 category_archive:
   type: liquid
