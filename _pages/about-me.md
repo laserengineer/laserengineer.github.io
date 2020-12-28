@@ -15,7 +15,7 @@ From some official records, I am:
 - A Husband of My Wife
 - A Son of My Parents
 
-## Who really really am I
+## Who really am I in reality
 ### For my Wife
 ```
 - Handyman for fixing computer, cars and home appliances
@@ -31,5 +31,5 @@ From some official records, I am:
 
 ### For my Parents
 ```
-- Pain in A?
+- Not a pain in A?
 ```

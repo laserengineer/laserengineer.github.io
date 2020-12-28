@@ -11,7 +11,7 @@ gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
 gem 'jemoji'
 gem 'jekyll-readme-index'
-
+gem "jekyll-remote-theme"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
