@@ -91,14 +91,14 @@ defaults:
       comments: true
       share: true
       header:
-        image: /assets/images/laserspace.jpg #the image at the top of the page
+        image: #/assets/images/laserspace.jpg #the image at the top of the page
       related: true
   # _pages
   - scope:
       path: "_pages"
       type: pages
       header:
-        image: /assets/images/laserspace.jpg #the image at the top of the page
+        image: #/assets/images/laserspace.jpg #the image at the top of the page
     values:
       layout: single
       author_profile: true
