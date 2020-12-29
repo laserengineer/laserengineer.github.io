@@ -15,4 +15,10 @@ tags:
 
 {% raw %}![alt](/assets/images/A byte of laser/image001.jpg){% endraw %}
 
-title: "A byte of laser 漫谈激光"
+### A byte of laser/image003.jpg
+![laser image 3](/assets/images/A byte of laser/image003.jpg)
+
+
+### A byte of laser/image002.jpg
+
+![laser image 2](/assets/images/A byte of laser/image002.jpg)
