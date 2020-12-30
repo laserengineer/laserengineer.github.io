@@ -11,25 +11,25 @@ tags:
 # A byte of laser 漫谈激光
 
 ## 写在前面:
-这篇博文大概十年前受朋友之邀而写. 十年后我重新翻出来，发现是它也是一个适合给孩子们科普激光的文章。
-于是重新梳理和调整了文章内容，让孩子能够更容易的接受。 并把它作为Github page的第一篇正式的博文。
-既然是给孩子看着玩的，里面所有知识都浅尝则止。
-人才疏学浅，能力有限，内容必有很多疏漏。因为孩子的中文水平不足以阅读这篇文章，所以我加一些英文引导让他们更加读懂一些。
+
+这篇博文最开始可以追溯到十年前的朋友之邀。 十年后我重新翻出来，发现是它也是一个适合给孩子们科普激光的文章。于是重新梳理和调整了文章内容，让孩子能够更容易的接受。 并把它作为Github page的第一篇正式的博文。
+
+既然是给孩子看着玩的，里面所有知识都浅尝则止。人才疏学浅，能力有限，内容必有很多疏漏。同时因为孩子的中文水平不足以阅读这篇文章，所以加入一些英文引导方便他们阅读。
 
 ```
  所有照片均来自网络，本人不拥有任何图片版权.
- All the images are searched and obtained by google or baidu.
- I do not own any copyright for any images.  
+ All the images are searched and obtained from Internet by Google or Baidu.
+ I do not own any copyright for any image.  
 ```
 ## 前言
 
-以两张大家熟知的并且比较酷炫的图片开始:
+首先以星球大战的镭射剑作为开始:
 > Let us start with Lightsaber from STAR WARS.
 
 <p align="center"> <img width="460" height="300" src="/assets/images/A byte of laser/Lightsaber_blue.png"> </p>
 <p align="center"> <img width="535" height="300" src="/assets/images/A byte of laser/image001.jpg"> </p>
 
-相信经常看电影的朋友一定不会忘记《星球大战》中使用的经典武器—镭射剑，在这部电影中镭射剑可谓出尽了风头，依靠手柄形成的镭射剑 `10年后注：这个应该是等离子,当年真是不懂plasma.` 几乎可以砍断任何物体，只有另一把相同的镭射剑才有可能与之抗衡，当年看电影的时候我对它无比的神往。好了，从这里开始我们的话题。
+《星球大战》中的经典武器—镭射剑，在这部电影中出尽了风头，人气爆棚。依靠手柄和原力形成的镭射剑 `10年后注：这个应该是等离子,当年真是不懂plasma.` 几乎可以砍断任何物体，只有另一把镭射剑才有可能与之抗衡，当年看电影的时候我对它无比的神往。
 
 >Lightsaber looks like a laser blade that capable to cut off everything. It can only be stopped by another Lightsaber.
 
@@ -57,19 +57,19 @@ tags:
 1个(x2) ⇨ 2个(x2) ⇨ 4个 ...... (Contributed by Daniel)
 <p align="center"> <img src="/assets/images/A byte of laser/image011.jpg"> </p>
 
-激光的光看起来是这个样子的
-> The photons in side laser beam looks like the same.
+激光内部的光子看起来是这个样子的
+> The photons inside a laser beam are identical.
 
 <p align="center"> <img src="/assets/images/A byte of laser/image007.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image007_01.jpg"> </p>
 
-普通光源发出的光
+普通光源发出的光子。
 >The photons in normal light source.
 
 <p align="center"> <img src="/assets/images/A byte of laser/image010.jpg"> </p>
 
-因为光子是相同的，团结就是力量. 激光可以做到普通光做不到的事情。
-> Laser shows special skills due to the similarity of these photons.
+因为众多光子是相同的，团结就是力量， 激光可以做到普通光做不到的事情-干涉。
+> Laser shows special skills due to the similarity of these photons- interference.
 
 <p align="center"> <img src="/assets/images/A byte of laser/image005.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image006.gif"> </p>
@@ -78,13 +78,13 @@ tags:
 
 激光发光的详细过程比较复杂，不过简单来说就像是进化论。物竞天择，适者生存，激光器内部只能放大特定的光子。只有最懂游戏规则的玩家才能成为最靓(亮)的仔。成王败寇，一将功成万骨枯(其它波长的光都被饿死了)。
 
-> Only the photons fit for the laser machine can lase.
+> Only the photons fit for the laser system design can lase.
 
 <p align="center"> <img src="/assets/images/A byte of laser/image014.jpg"> </p>
 
 ### 激光器都啥样？
 
-激光器的种类非常多，这是一个红宝石激光器的样子。[红宝石激光器](http://www.nuskool.com/learn/lesson/build-real-life-lightsaber/)
+激光器的种类非常多，设计也是五花八门。这里只举一个红宝石激光器的样子。[红宝石激光器](http://www.nuskool.com/learn/lesson/build-real-life-lightsaber/)
 > There are many different kinds of lasers, and this is a example for ruby laser.
 
 <p align="center"> <img src="/assets/images/A byte of laser/image014_01.jpg"> </p>
@@ -104,9 +104,9 @@ tags:
 一根光缆可以包含几千根光纤
 <p align="center"> <img src="/assets/images/A byte of laser/high-fiber-count.jpg"> </p>
 
-> Single fiber can transfer up to 140GB data per second, and a Fiber Optic Trunk Cable could contain multiple thousands of fibers
+> Single fiber can transfer up to 140GB data per second, and a Fiber Optic Trunk Cable could contain multiple thousands of fibers。
 
-横跨太平洋和大西洋的光缆地图, 5G时代主要解决短距离的信息传递。长距离信息传输还是主要依赖光纤传输。
+横跨太平洋和大西洋的光缆地图, 5G时代主要解决近距离服务器和终端之间的信息传递。不同服务器之间，长距离信息传输还是主要依赖光纤。
 > 5G mainly solve the problem for short distance data transfer, fiber optic is the solution for long distance data transfer.
 
 <p align="center"> <img src="/assets/images/A byte of laser/fiber over pacific ocean.PNG"> </p>
@@ -136,12 +136,11 @@ tags:
 <p align="center"> <img src="/assets/images/A byte of laser/image027.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image028.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image032.jpg"> </p>
-<p align="center"> <img src="/assets/images/A byte of laser/image029.gif"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image031.jpg"> </p>
 
-用激光在感恩节派上面画火鸡
+前东家Coherent感恩节时评，用激光在感恩节派上面画火鸡
 
-> Draw a turkey on a pie with laser
+> Draw a turkey on a Thanks-giving pie with laser by Coherent.
 
 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6737350793919254528" height="701" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
@@ -160,7 +159,6 @@ tags:
 <p align="center"> <img src="/assets/images/A byte of laser/image037.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image038.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image039.jpg"> </p>
-<p align="center"> <img src="/assets/images/A byte of laser/image040.jpg"> </p>
 
 #### 全息存储
 > Holographic storage
@@ -192,11 +190,13 @@ tags:
 
 ### 后记
 
-激光器由于工程设计，它的美很难被众人所接受。但激光的美，却是科技与人类审美完美的融合。
-人类的所有审美几乎都离不开光的处理。
+人类对所有美好的事物的需求，几乎都离不开光。激光是科技与人类艺术完美的融合。
+
 <p align="center"> <img src="/assets/images/A byte of laser/image044.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image045.jpg"> </p>
 
-十年后重新校改这篇博文，感慨万千。虽然因为光学专业错过了计算机网络，互联网的时代红利，但是现在还是在不停的板砖。但是从人生知识角度来说，学光学是个非常好的基石，它回答了我生命中80%的“为什么”。 物理学没有保质期，知识也是没有保质期的。现在转软件方面工作已经3年多，不禁感慨之前苦逼的工程经验给了我莫大的帮助。可以比较深入地理解根本问题，解决项目最关键需求。
+十年后重新校改这篇博文，感慨万千。当年还是涉世未深、到处活跃的激光器现场工程师， 如今已经是两个男孩的爸爸、上有老下有小不停板砖的社畜。
+
+暂别激光行业也3年多了，虽然因为光电专业错过了计算机网络、互联网的时代红利。但是从科学知识角度来看，学光电是个非常好的专业基石，它回答了我生命中80%的 “为什么” ，并让我能够深入浅出教授孩子很多科学知识。 物理学没有保质期，基础工程知识也是没有保质期的。尽管现在工作软件居多，但不禁感慨之前苦逼的工程经验和光电学术背景给了我莫大的帮助。非常多的时候可以深入地理解根本问题，并拿出可靠的解决方案。
 
 路漫漫其修远兮，吾将上下而求索。
