@@ -8,24 +8,27 @@ categories:
 tags:
   - Laser
 ---
-## A byte of laser 漫谈激光
+# A byte of laser 漫谈激光
 
-###写在前面:
+## 写在前面:
 这篇博文大概十年前受朋友之邀而写. 十年后我重新翻出来，发现是它也是一个适合给孩子们科普激光的文章。
 于是重新梳理和调整了文章内容，让孩子能够更容易的接受。 并把它作为Github page的第一篇正式的博文。
 既然是给孩子看着玩的，里面所有知识都浅尝则止。
 人才疏学浅，能力有限，内容必有很多疏漏。因为孩子的中文水平不足以阅读这篇文章，所以我加一些英文引导让他们更加读懂一些。
 
 ```
-**所有照片均来自网络，本人无任何商业目的**
+ 所有照片均来自网络，本人不拥有任何图片版权.
+ All the images are searched and obtained by google or baidu.
+ I do not own any copyright for any images.  
 ```
-### 前言
+## 前言
 
 以两张大家熟知的并且比较酷炫的图片开始:
 > Let us start with Lightsaber from STAR WARS.
 
 <p align="center"> <img width="460" height="300" src="/assets/images/A byte of laser/Lightsaber_blue.png"> </p>
-<p align="center"> <img width="460" height="300" src="/assets/images/A byte of laser/image001.jpg"> </p>
+<p align="center"> <img width="535" height="300" src="/assets/images/A byte of laser/image001.jpg"> </p>
+
 相信经常看电影的朋友一定不会忘记《星球大战》中使用的经典武器—镭射剑，在这部电影中镭射剑可谓出尽了风头，依靠手柄形成的镭射剑 `10年后注：这个应该是等离子,当年真是不懂plasma.` 几乎可以砍断任何物体，只有另一把相同的镭射剑才有可能与之抗衡，当年看电影的时候我对它无比的神往。好了，从这里开始我们的话题。
 
 >Lightsaber looks like a laser blade that capable to cut off everything. It can only be stopped by another Lightsaber.
@@ -40,39 +43,160 @@ tags:
 
 
 那么什么是激光呢？还要从“laser”这个英文单词说起，其实laser是一个很年轻的单词是二十世纪初造出来的，在莎士比亚时期肯定没有这个单词的，具体提出的年代我不太关心（如果喜欢考究的朋友，可以google一下了）。
-> Laser is an acronym for——Light Amplification by Stimulated Emission of Radiation
 
 >
-*“受激辐射” 它基于伟大的科学家爱因斯坦在1916年提出了的一套全新的理论。这一理论是说在组成物质的原子中，有不同数量的粒子（电子）分布在不同的能级上，在高能级上的粒子受到某种光子的激发，会从高能级跳到（跃迁）到低能级上，同时将会辐射出与激发它的光子性质相同的光子。而且在某种状态下，能出现弱光激发出强光的现象。这就叫做“受激辐射的光放大”，简称激光。*
+*“受激辐射” 它基于伟大的科学家爱因斯坦在1916年提出了的一套全新的理论。这一理论是说在组成物质的原子中，有不同数量的粒子（电子）分布在不同的能级上，在高能级上的粒子受到某种光子的激发，会从高能级跳到（跃迁）到低能级上，同时将会辐射出与激发它的光子性质相同的光子。而且在某种状态下，能出现弱光激发出强光的现象。这就叫做“受激辐射的光放大”，简称激光*
+>
+<p align="center"> <img src="/assets/images/A byte of laser/image013.jpg"> </p>
 
-换成小朋友的话，激光器本质上就是个就是一个光子**复制机**.
-复制出一样的东西，壮大自己的势力。激光器发出的光
+如果用小朋友可以理解的话，激光器本质上就是个就是一个光子**复制机**.
 
-![laser image 7](/assets/images/A byte of laser/image007.jpg)
-![laser image 7_1](/assets/images/A byte of laser/image007_01.jpg)
+> Laser system can be treated as a copy machine for Photons.
+<p align="center"> <img src="/assets/images/A byte of laser/Photon increase.png"> </p>
+
+1个(x2) ⇨ 2个(x2) ⇨ 4个 ...... (Contributed by Daniel)
+<p align="center"> <img src="/assets/images/A byte of laser/image011.jpg"> </p>
+
+激光的光看起来是这个样子的
+> The photons in side laser beam looks like the same.
+
+<p align="center"> <img src="/assets/images/A byte of laser/image007.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image007_01.jpg"> </p>
 
 普通光源发出的光
+>The photons in normal light source.
 
-![laser image 10](/assets/images/A byte of laser/image010.jpg)
+<p align="center"> <img src="/assets/images/A byte of laser/image010.jpg"> </p>
 
-团结就是力量，于是乎激光做到了普通光做不到的事情。
+因为光子是相同的，团结就是力量. 激光可以做到普通光做不到的事情。
+> Laser shows special skills due to the similarity of these photons.
 
-![](/assets/images/A byte of laser/image005.jpg)
-
-![](/assets/images/A byte of laser/image006.gif)
+<p align="center"> <img src="/assets/images/A byte of laser/image005.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image006.gif"> </p>
 
 ### 那激光是怎么产生的呢？
 
 激光发光的详细过程比较复杂，不过简单来说就像是进化论。物竞天择，适者生存，激光器内部只能放大特定的光子。只有最懂游戏规则的玩家才能成为最靓(亮)的仔。成王败寇，一将功成万骨枯(其它波长的光都被饿死了)。
 
-![](/assets/images/A byte of laser/image014.jpg)
+> Only the photons fit for the laser machine can lase.
 
-### 激光应用
+<p align="center"> <img src="/assets/images/A byte of laser/image014.jpg"> </p>
 
-#### 光纤通信
+### 激光器都啥样？
 
-光纤和激光器的发展进步是光通讯领域发展的基石，可以负责的说没有光纤和激光器发明就不会有现在的如此发达的互联网。
-单根光纤的传输速度记录是~1.125 Terabits per second =~140 GB (https://www.ispreview.co.uk/index.php/2016/02/uk-scientists-squeeze-1-125tbps-through-a-single-fibre-optic-receiver.html#:~:text=A%20team%20of%20researchers%20working,a%20single%20coherent%20optical%20receiver.)
+激光器的种类非常多，这是一个红宝石激光器的样子。[红宝石激光器](http://www.nuskool.com/learn/lesson/build-real-life-lightsaber/)
+> There are many different kinds of lasers, and this is a example for ruby laser.
+
+<p align="center"> <img src="/assets/images/A byte of laser/image014_01.jpg"> </p>
+
+
+## 激光应用
+
+### 光纤通信
+
+激光在光纤介质中传播
+> Laser travels inside fiber
+<p align="center"> <img src="/assets/images/A byte of laser/image015.jpg"> </p>
+
+光纤和激光器的发展进步是光通讯领域发展的基石，人们在此基础上建立了现在发达的互联网。
+单根光纤的传输速度记录是[1.125 Terabits per second 约140 GB](https://www.ispreview.co.uk/index.php/2016/02/uk-scientists-squeeze-1-125tbps-through-a-single-fibre-optic-receiver.html#:~:text=A%20team%20of%20researchers%20working,a%20single%20coherent%20optical%20receiver.).
 
 一根光缆可以包含几千根光纤
-![](/assets/images/A byte of laser/high-fiber-count.jpg)
+<p align="center"> <img src="/assets/images/A byte of laser/high-fiber-count.jpg"> </p>
+
+> Single fiber can transfer up to 140GB data per second, and a Fiber Optic Trunk Cable could contain multiple thousands of fibers
+
+横跨太平洋和大西洋的光缆地图, 5G时代主要解决短距离的信息传递。长距离信息传输还是主要依赖光纤传输。
+> 5G mainly solve the problem for short distance data transfer, fiber optic is the solution for long distance data transfer.
+
+<p align="center"> <img src="/assets/images/A byte of laser/fiber over pacific ocean.PNG"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/fiber over Atlantic ocean.PNG"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image016.jpg"> </p>
+### 激光医疗
+
+>Laser in medical, teeth whitening and eye surgery.
+
+牙齿美白
+
+<p align="center"> <img src="/assets/images/A byte of laser/image019.jpg"> </p>
+
+近视矫正
+
+<p align="center"> <img src="/assets/images/A byte of laser/image020.jpg"> </p>
+
+### 激光加工：打标，切割，焊接
+>Laser marking, cutting and welding
+
+激光打标就是将激光作为一把锋利的小刻刀，在目标物体表面刻画出预期文字、图案。激光打标可以打出各种文字、符号和图案等，字符大小可以从毫米到微米量级.
+
+<p align="center"> <img src="/assets/images/A byte of laser/image023.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image024.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image025.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image026.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image027.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image028.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image032.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image029.gif"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image031.jpg"> </p>
+
+用激光在感恩节派上面画火鸡
+
+> Draw a turkey on a pie with laser
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6737350793919254528" height="701" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
+
+
+### 数据存储
+
+#### 光盘
+> Data storage
+
+光盘的工作区含有很多层，其中每一层表面都是凹凸不平来存储不同的信息(25GB 以上)。
+这些年流行的蓝光DVD存储数据量比以前CD增加了非常多。简单地说就是：同样大小的纸，更细的笔(蓝光) 能够在多层纸上(DVD 工作层) 能写更多的字。  
+> The blue light DVD can storage much larger data then normal CD up to 100 GB per DVD.
+<p align="center"> <img src="/assets/images/A byte of laser/image033.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image034.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image037.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image038.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image039.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image040.jpg"> </p>
+
+#### 全息存储
+> Holographic storage
+
+ 全息存储原理上和普通胶卷相机很类似，用激光代替照明光,全息介质代替胶卷。胶卷用来记录物体光信息，全息介质记录光的干涉条纹信息。
+<p align="center"> <img src="/assets/images/A byte of laser/film camera.JPG"> </p>
+
+10*10 cm 光盘大小的介质可以存储 [8.5TB](https://newatlas.com/holographic-data-storage-film/54117/) 数据。
+
+<p align="center"> <img src="/assets/images/A byte of laser/holographic storage.png"> </p>
+
+### 影像
+
+激光电视
+> Laser TV
+<p align="center"> <img src="/assets/images/A byte of laser/laserTV.jpg"> </p>
+
+全息照片
+>holographic image
+
+<p align="center"> <img src="/assets/images/A byte of laser/blog-post-059-00-cmmrtv-20-the-note.jpg"> </p>
+
+全息投影
+
+<p align="center"> <img src="/assets/images/A byte of laser/image040.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image041.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image042.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image043.jpg"> </p>
+
+### 后记
+
+激光器由于工程设计，它的美很难被众人所接受。但激光的美，却是科技与人类审美完美的融合。
+人类的所有审美几乎都离不开光的处理。
+<p align="center"> <img src="/assets/images/A byte of laser/image044.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/image045.jpg"> </p>
+
+十年后重新校改这篇博文，感慨万千。虽然因为光学专业错过了计算机网络，互联网的时代红利，但是现在还是在不停的板砖。但是从人生知识角度来说，学光学是个非常好的基石，它回答了我生命中80%的“为什么”。 物理学没有保质期，知识也是没有保质期的。现在转软件方面工作已经3年多，不禁感慨之前苦逼的工程经验给了我莫大的帮助。可以比较深入地理解根本问题，解决项目最关键需求。
+
+路漫漫其修远兮，吾将上下而求索。
