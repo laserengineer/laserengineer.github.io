@@ -154,25 +154,28 @@ tags:
 光盘的工作区含有很多层，其中每一层表面都是凹凸不平来存储不同的信息(25GB 以上)。
 这些年流行的蓝光DVD存储数据量比以前CD增加了非常多。简单地说就是：同样大小的纸，更细的笔(蓝光) 能够在多层纸上(DVD 工作层) 能写更多的字。  
 > The blue light DVD can storage much larger data then normal CD up to 100 GB per DVD.
+
 <p align="center"> <img src="/assets/images/A byte of laser/image033.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image034.jpg"> </p>
-<p align="center"> <img src="/assets/images/A byte of laser/image037.jpg"> </p>
-<p align="center"> <img src="/assets/images/A byte of laser/image038.jpg"> </p>
+<p align="center"> <img src="/assets/images/A byte of laser/DVD Surface.png"> </p>
+
+<p align="center"> <img width="460" height="300" src="/assets/images/A byte of laser/image037.jpg"> </p>
+<p align="center"> <img width="460" height="300" src="/assets/images/A byte of laser/image038.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image039.jpg"> </p>
 
 #### 全息存储
-> Holographic storage
+> Holographic storage is similar to film camera。
 
- 全息存储原理上和普通胶卷相机很类似，用激光代替照明光,全息介质代替胶卷。胶卷用来记录物体光信息，全息介质记录光的干涉条纹信息。
+ 全息存储原理上和普通胶卷相机可以类比，用激光代替照明光,全息介质代替胶卷。胶卷用来记录物体光信息，全息介质记录光的干涉条纹信息。
 <p align="center"> <img src="/assets/images/A byte of laser/film camera.JPG"> </p>
 
-10*10 cm 光盘大小的介质可以存储 [8.5TB](https://newatlas.com/holographic-data-storage-film/54117/) 数据。
+10*10 cm 光盘大小的全息介质可以存储 [8.5TB](https://newatlas.com/holographic-data-storage-film/54117/) 数据。
 
 <p align="center"> <img src="/assets/images/A byte of laser/holographic storage.png"> </p>
 
 ### 影像
 
-激光电视
+激光电视, 目前市面上最为昂贵的电视之一。
 > Laser TV
 <p align="center"> <img src="/assets/images/A byte of laser/laserTV.jpg"> </p>
 
@@ -190,13 +193,13 @@ tags:
 
 ### 后记
 
-人类对所有美好的事物的需求，几乎都离不开光。激光是科技与人类艺术完美的融合。
+人类对所有美好事物的需求几乎都离不开光，而激光是科技与人类艺术完美的融合。
 
 <p align="center"> <img src="/assets/images/A byte of laser/image044.jpg"> </p>
 <p align="center"> <img src="/assets/images/A byte of laser/image045.jpg"> </p>
 
-十年后重新校改这篇博文，感慨万千。当年还是涉世未深、到处活跃的激光器现场工程师， 如今已经是两个男孩的爸爸、上有老下有小不停板砖的社畜。
+十年后重新修改这篇博文，不禁感慨万千。当年还是涉世未深、到处出差的激光器现场工程师， 如今已经是两个男孩的爸爸、上有老下有小职场板砖的社畜。
 
-暂别激光行业也3年多了，虽然因为光电专业错过了计算机网络、互联网的时代红利。但是从科学知识角度来看，学光电是个非常好的专业基石，它回答了我生命中80%的 “为什么” ，并让我能够深入浅出教授孩子很多科学知识。 物理学没有保质期，基础工程知识也是没有保质期的。尽管现在工作软件居多，但不禁感慨之前苦逼的工程经验和光电学术背景给了我莫大的帮助。非常多的时候可以深入地理解根本问题，并拿出可靠的解决方案。
+暂别激光行业也3年多了，虽然因为光电专业错过了计算机网络、互联网的时代红利。但是从科学知识角度来看，光电是个非常好的自然科学基石。它几乎回答了我所有生命中关于大自然的 “为什么”，并让我能够深入浅出教授孩子很多科学知识。物理学没有保质期，永远不会过时。 基础科学/工程知识也永远不会过时。尽管现在工作软件居多，但不禁感慨之前苦逼的工程经验和光电学术背景给了我莫大的帮助。可以深入地理解根本问题，并拿出可靠的解决方案。很多问题还像当年高中物理竞赛时“笨寻思”来分析问题。
 
 路漫漫其修远兮，吾将上下而求索。
