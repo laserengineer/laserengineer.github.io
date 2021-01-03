@@ -36,7 +36,7 @@ This a good solution for CLA exam but not a idle solution for real project as co
 > * Low Coupling
 >   * A module shouldn't be dependent on another module in order to operate.
 
-* Cohension is about how the module is written (intra-module) and self ccompleteness for single task
+* Cohesion is about how the module is written (intra-module) and self completeness for single task
     * Readability
     * Maintainability
     * Reusability
@@ -50,5 +50,16 @@ This a good solution for CLA exam but not a idle solution for real project as co
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/1/Modular Structure.png"> </p>
 
 Sample Project Structure:
-* User Interface: Event Handling Loop (EHL)
-* User Console (GUI)
+* Event Handling Loop (User Interface)
+* User Interface (User Interface)
+* Message Handling loop (Controller Loop)
+* File I/O
+* Data Acquisition
+* Data Analysis
+
+Thing to note:
+* Modules are typically separate project libraries
+    * Each module has 'Main' VI, private Queue control (Handler)
+* References are often shared by Functional Global Variables (FGVs)
+* Each module has access to the controller (MHL) queue reference, but not to each others'
+* Not all modules need to be loaded at the start. They can be launched dynamically at runtime.
