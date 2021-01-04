@@ -1,5 +1,5 @@
 ---
-title: LabVIEW Actor Framework_1
+title: LabVIEW Actor Framework_1 Modular Applications
 categories:
   - Learn
 tags:

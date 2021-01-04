@@ -1,7 +1,7 @@
 ---
 title: LabVIEW Actor Framework_2
 categories:
-  - LabVIEW
+  - Study
 tags:
   - LabVIEW
   - Actor
@@ -10,7 +10,7 @@ tags:
 
 ### Actor Core
 
-Actors receive messages (to their inbox) and carryout tasks based on those messages. (Like a Queued Message Handler) 
+Actors receive messages (to their inbox) and carryout tasks based on those messages. (Like a Queued Message Handler)
 
 * XX
     * XX
