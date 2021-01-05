@@ -33,3 +33,8 @@ Rondo Alla Turca is the last moment of the sonata, popularly known as the "Turki
 Not version controlled
 
 {% include video id="x6ncNq_FvCc" provider="youtube" %}
+
+2021-01-04
+Bug fixing version on A major part
+
+{% include video id="OXvirabxtGw" provider="youtube" %}
