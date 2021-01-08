@@ -7,6 +7,7 @@ tags:
   - Actor
 ---
 ## Recap of Modular Applications in LabVIEW
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
 
 ### Sample Code
 [Github Link](https://github.com/laserengineer/LabVIEW-Study)

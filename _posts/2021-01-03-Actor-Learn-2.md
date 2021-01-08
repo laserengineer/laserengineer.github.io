@@ -6,6 +6,8 @@ tags:
   - LabVIEW
   - Actor
 ---
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
+
 ## Deriving the Actor Core in Actor Framework (The Command Pattern)
 
 ### QDSM and QDMH Structure
@@ -33,7 +35,7 @@ Issues:
 
 Each VI represents some actor carrying out an independent task in the system.  
 
-Actor Framework or Libraries have been implemented to permit actor-style programming in languages that don't have actors built-in.
+Actor Framework or Libraries have been implemented to permit actor-style programming in languages that don't have actors built-in. The actor framework works is essentially to launch asynchronous processes when required, use "Start Asynchronous Call Node"
 
 Notes:
 * All  the calculation/process is finished within specific Actor
@@ -50,17 +52,60 @@ Notes:
 
 Actor core.vi, Actors receive messages (to their inbox) and carryout tasks based on those messages. (Like a Queued Message Handler).
 
+Actor Brain = Message Handling Loop (MHL)
+
 Asynchronous call node to launch QDSM as Actor.
 
 Compared with QDSM
 
 * Shift registor -> LabVIEW Class
-* Case structure -> LabVIEW Class
+* Case structure -> LabVIEW Class, case message process is replaced by dynamic dispatch of Do.vi
 * Use dynamic dispatch to replace case selector
 * Case "State" (Command) is replaced **message Class**
 * Data is wrapped into Message private cluster to get rid of variant
+
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/framework Change 2.png"> </p>
+
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Class.png"> </p>
 
 Pillars of OOP:
 * Inheritance
 * Encapsulation
 * Polymorphism
+
+In real application development, we need to abstract the Core.vi to Top ancestor's level
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.jpg"> </p>
+
+This actor class the top ancestor's level and include the while loop within the Actor Core.vi method, set it as "Protect" to forbid external visit. Only child class is allowed to visit.
+
+All the child class actors inherit from Actor.lvclass and overwrite the Actor Core.vi for different parellel tasks. Note:
+* Child class Actor Core.vi need to keep invoke node for ancestor Actor Core.vi to ensure the message circulation
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/child actor core.jpg"> </p>
+
+Elements of the Actor model
+
+* Actor
+    * An encapsulation of data, procedures and threads
+* Message
+    * Any information passing between actors
+* Address
+    * A label indicating message destination
+
+Actor Principle
+1. Actor can receive any message at any time
+    * Actor must react to unexpected messages gracefully
+2. Actor are self-deterministic
+    * Message are always requests, never commands
+    * Things are not done to an actor, an actor does things to itself
+
+* Actors encapsulate data, procedures and threads
+* Actors cannot predict the next message
+* Actor Design != Actor System Design
+* Addresses = Message Transport (Queue, User Event, etc.)
+    * An address defines a location
+* Each MHL is a new actor
+* Each actor entails development overhead, all actors need exit conditions and error handling
