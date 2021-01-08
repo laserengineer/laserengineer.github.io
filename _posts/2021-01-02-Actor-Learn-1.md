@@ -7,10 +7,10 @@ tags:
   - Actor
 ---
 ## Recap of Modular Applications in LabVIEW
-[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
+Part 1
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth),
+[Source Code](https://github.com/laserengineer/LabVIEW-Study.git)
 
-### Sample Code
-[Github Link](https://github.com/laserengineer/LabVIEW-Study)
 The right Structure is the easy solution for LabVIEW CLA exam. Six parallel process including:
 * Controller/Message Handler
 * User Console (GUI)

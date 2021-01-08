@@ -6,7 +6,8 @@ tags:
   - LabVIEW
   - Actor
 ---
-[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
+Actor Core
+[Source Code](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
 
 ## Deriving the Actor Core in Actor Framework (The Command Pattern)
 
