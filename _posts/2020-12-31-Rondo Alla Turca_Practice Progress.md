@@ -20,7 +20,7 @@ The sonata consists of three movements:
 Rondo Alla Turca is the last moment of the sonata, popularly known as the "Turkish Rondo" or "Turkish March", is often heard on its own and is one of Mozart's best-known piano pieces.
 
 ### Practice Progress
-
+2021-01-08
 #### v0.8 Test Release Version
 {% include video id="nqzB7TqFF3o" provider="youtube" %}
 
