@@ -1,15 +1,17 @@
 ---
-title: LabVIEW AF_4 AF Hello World!
+title: LabVIEW AF_4 User Interface Basics with Actor Core Override
 categories:
   - Study
 tags:
   - LabVIEW
   - Actor
 ---
-AF Hello World!
-[Source Code](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
 
-## AF Hello World!
+## User Interface Basics with Actor Core Override
+
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
+
+[LabVIEW Source Code](https://github.com/laserengineer/LabVIEW-Study.git)
 
 ### First rule of coding - Just write the code
 
