@@ -1,5 +1,6 @@
 ---
-title: LabVIEW AF_4 User Interface Basics with Actor Core Override
+title: LabVIEW AF_5 User Interface Basics with Actor Core Override
+date: 2021-01-13
 categories:
   - Study
 tags:

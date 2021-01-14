@@ -62,7 +62,7 @@ Notes:
 * Top Message Class the "Abstract" Message
 * Each message requires a new child class to override Parent Abstract Message
 * Each child message class has a "Do.vi" to override the Parent "do.vi"
-* "Do.vi" input is Actor Class and Message class (Queue Element )
+* "Do.vi" input are Message class (Queue Element ) Actor Class and
     * The message class determine which child class to use during the runtime
     * Actor Class input and output for Actor Data operations (Toggle)  
 
