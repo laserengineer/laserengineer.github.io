@@ -49,6 +49,23 @@ Notes:
     * Send messages to other Actors
     * Create other limited Actor
 
+### Actor.lv Class
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.png"> </p>
+
+Actor LabVIEW Class has 7 Vi for override
+
+Notes:
+
+* The QDSM Shift registor determine the actor name
+* Message Class is the Queue Element
+  * Different Queue Element refer to different Message Class
+* Top Message Class the "Abstract" Message
+* Each message requires a new child class to override Parent Abstract Message
+* Each child message class has a "Do.vi" to override the Parent "do.vi"
+* "Do.vi" input is Actor Class and Message class (Queue Element )
+    * The message class determine which child class to use during the runtime
+    * Actor Class input and output for Actor Data operations (Toggle)  
+
 
 
 ### Actor Core
@@ -59,13 +76,19 @@ Actor Brain = Message Handling Loop (MHL)
 
 Asynchronous call node to launch QDSM as Actor.
 
-Compared with QDSM
+Compared with QDSM， use dynamic dispatch technology
 
-* Shift registor -> LabVIEW Class
-* Case structure -> LabVIEW Class, case message process is replaced by dynamic dispatch of Do.vi
-* Use dynamic dispatch to replace case selector
+* Shift Registor -> LabVIEW Class Data
+* Message Class Data contains:
+  * "Case Command"
+  * "Data" used for each case
+* **Do.vi** includes
+  * Unbundle the cluster that includes commands and data
+  * Case structure for each case
+* Case structure -> LabVIEW Class, case message process is replaced by dynamic dispatch of Do.vi，
+Use dynamic dispatch to replace case selector
 * Case "State" (Command) is replaced **message Class**
-* Data is wrapped into Message private cluster to get rid of variant
+* Data is wrapped into **Message private data** to get rid of variant
 
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/framework Change 2.png"> </p>
