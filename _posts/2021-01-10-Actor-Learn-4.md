@@ -24,6 +24,8 @@ The UI Loop is also called "Helper Loop"
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/Actor QSM.jpg"> </p>
 
+The help loop is running parellelly with Actor Core.vi as we need to make sure QDSM is runing at the same time.
+
 Recap the " **Actor Core**"
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/2.jpg"> </p>
 
@@ -35,3 +37,8 @@ The loop can also be add into the overrided "Actor Core.vi"
 The UI Loop is also called "Helper Loop"
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/6.jpg"> </p>
+
+## Create Homemade LabVIEW Core
+[source](https://zhuanlan.zhihu.com/p/148606242)
+
+1. 

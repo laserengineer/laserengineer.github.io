@@ -55,17 +55,21 @@ Notes:
 Actor LabVIEW Class has 7 Vi for override
 
 Notes:
-
-* The QDSM Shift registor determine the actor name
-* Message Class is the Queue Element
+#### Actor Core = QDSM
+* The QDSM Shift register Cluster Name determine the actor name
+* Message Class is the Queue Element for QDSM
   * Different Queue Element refer to different Message Class
-* Top Message Class the "Abstract" Message
-* Each message requires a new child class to override Parent Abstract Message
-* Each child message class has a "Do.vi" to override the Parent "do.vi"
-* "Do.vi" input are Message class (Queue Element ) Actor Class and
-    * The message class determine which child class to use during the runtime
-    * Actor Class input and output for Actor Data operations (Toggle)  
-
+  * Top Message Class is a the "Abstract" Message
+  * Each operational message is a new child class to override "Abstract" Message
+  * Each child message class has a "Do.vi" to override the Parent "do.vi"
+* "Do.vi" input are
+  * Message class (Queue Element for QDSM)
+    * Determine which specific "Do.vi" to use during runtime
+    * Each QDSM case -> Each Method -> Each Child Class "Do.vi"     
+  * Actor Class
+    * Actor Class input -> QDSM Cluster
+    * Each "Do.vi" will perform a method/operation on the Actor Class
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.jpg"> </p>
 
 
 ### Actor Core
