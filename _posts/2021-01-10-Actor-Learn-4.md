@@ -75,3 +75,13 @@ To interact with user input, we need 2nd loop for event loop
   * Message Priority Queue expose to internal, that able to enqueue, dequeue, release queue
 * The relationship between method and its message is
   * "Do.vi" will call its method
+
+## UI
+>The Actor Framework does not provide the method VIs of your actor with any directly access to controls, indicator, or parallel loops that might be part of its override of Actor Core.vi. You must define that access within your actor.
+>
+> Here are two easy ways to define that access within your actor:
+> 1. Include a reference in your actor's private data to either your Actor Core.vi or to tis front panel Object. Bundle these reference into the actor before invoking the Call Parent node. Your Actor can then access these references from within any of its methods. This method allows your methods to control the user interface of the Actor Core.vi. Although it may not be the most efficient approach. This approach works well for interfaces that are only displaying information and not reacting to users' actions.
+> 2. Create a set of user events to manage your front panel update. Create these evens in your Actor Core.vi and bundle them into the actor object prior to invoking the Call Parent node. Then create a loop in your Actor Core that runs in parallel to call Parent node which is dynamically registered for the events. Whe n then actor receives a message, the handling function for that message can generate the appropriate event and pass along any relevant data.
+
+> Alternatively, your may choose to use queues, notifiers or other mechanism to communicate with your parallel loop rather than events. Regardless of which mechanism your prefer, NI recommended that you select only one data transfer mechanism within any given actor and keep the total number of sunch mechanisums to a minimum within the application as a whole. Be sure to provide a mechanism to stop your parallel and trigger that mechanism by overriding *Stop Core.vi* in your actor Child Class
+>
