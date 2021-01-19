@@ -1,6 +1,6 @@
 ---
 title: LabVIEW AF_5 User Event in Actor Framework
-date: 2021-01-19
+date: 2021-01-18
 categories:
   - Study
 tags:
@@ -20,6 +20,8 @@ This video includes:
 * Actor Core overrides
 * Stop Core overrides
 * Use both overrides to create, generate and destroy user events.
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/5/Server UI.PNG"> </p>
+
 
 ### Function overview
 >* Chat Room Server
@@ -32,7 +34,7 @@ This video includes:
 >
 
 ### Design Steps
-#### 1. Start and Stop Actors
+#### Start and Stop Actors
 It is the actor's responsibility to stop the help loop as opposed to the other way around to let other actors to stop this actor.
 
 More details to the Actor
@@ -43,3 +45,34 @@ More details to the Actor
   * Stop Core.vi -> Release Reference (Override)
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/5/Pre-launch and Stop Core.PNG"> </p>
+
+Start working on Overrides
+
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Server Overrides.PNG"> </p>
+
+Pre-launch vi
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Pre-launch.PNG"> </p>
+
+Stop Core.vi
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Stop Core.PNG"> </p>
+
+Server UI Block Diagram
+
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Server UI_Block Diagram.PNG"> </p>
+
+After close the panel:
+* Actor is closed
+* Windows is closed
+* No locked items in project
+* Nothing is accidentally running into background
+
+### Summarize
+* Pre Launch Init.vi -> Create **User Event**
+* Actor Core.vi -> Dynamically register and use **User Event**
+* Stop Core.vi -> Generate **User Event** and close event reference
+
+DO NOT start any actor in Pre Launch Init.vi, the reason is for uplevel calling this VI- Launch Actro Core.vi is "Non-reentrant". It needs to wait the return of the new actor Enqueue (queue of queues). While Pre Launch Ini.vi is **Before** return Enqueuer
+>Actor.vi sends the enqueuer back to launch actor core via the queue of queues, where launch actor core is sitting waiting for it. Hence a non re-entrant vi holds up any new actors from being launched.
+
+We can also use user event to update front panel indicators as well.
+Next chapter is for how to launch nested actors and keep a track of nested actors in the application.
