@@ -54,6 +54,8 @@ Hand Last ACK Core.vi read the error message and pass it to caller's QML
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/7/Hand Last Ack.jpg"> </p>
 Send the error from low to up level. The up level is responsible for close the nested actor.
 
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/7/Error Route.png"> </p>
+
 The developer could override the following functions to change the behaviour.
 _ Handle Error.vi
 _ Last Ack Core.vi
@@ -68,4 +70,4 @@ Single Actor Start, run and close procedure.
 4. Actor invokes Actor Core, which runs until stop conditions (error or instruction) are met
 5. Actor invokes Stop Core
 6. Actor sends Last ACK, containing error information to caller
-7. Actor Stops 
+7. Actor Stops
