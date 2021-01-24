@@ -74,9 +74,9 @@ Notes:
     * Actor Class input -> QDSM Cluster
     * Each "Do.vi" will perform a method/operation on the Actor Class
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.jpg"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.png"> </p>
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/7 VIs for Override.png"> </p>
 
 ### Actor Core
 
@@ -112,7 +112,7 @@ Pillars of OOP:
 
 In real application development, we need to abstract the Core.vi to Top ancestor's level
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.jpg"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top Core.png"> </p>
 
 This actor class the top ancestor's level and include the while loop within the Actor Core.vi method, set it as "Protect" to forbid external visit. Only child class is allowed to visit.
 
