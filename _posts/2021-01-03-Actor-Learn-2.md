@@ -73,6 +73,7 @@ Notes:
   * Actor Class
     * Actor Class input -> QDSM Cluster
     * Each "Do.vi" will perform a method/operation on the Actor Class
+    
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.jpg"> </p>
 
 
