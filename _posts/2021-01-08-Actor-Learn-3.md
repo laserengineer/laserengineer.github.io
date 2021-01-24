@@ -2,14 +2,17 @@
 title: LabVIEW AF_3 AF Hello World!
 categories:
   - Study
+  - LabVIEW
 tags:
   - LabVIEW
   - Actor
 ---
-AF Hello World!
-[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
+<span style="color:red">
+<span style="font-size: 150%">
+First rule of coding - Just write the code. </span>
+</span>
 
-[Source Code](https://github.com/laserengineer/LabVIEW-Study.git)
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth), [LabVIEW Sample Code](https://github.com/laserengineer/LabVIEW-Study.git)
 
 ## AF Hello World!
 

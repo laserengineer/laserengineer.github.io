@@ -2,16 +2,22 @@
 title: LabVIEW AF_1 Modular Applications
 categories:
   - Study
+  - LabVIEW
 tags:
   - LabVIEW
   - Actor
 ---
+<span style="color:red">
+<span style="font-size: 150%">
+First rule of coding - Just write the code. </span>
+</span>
+
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth), [LabVIEW Sample Code](https://github.com/laserengineer/LabVIEW-Study.git)
 ## Recap of Modular Applications in LabVIEW
 Part 1
-[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth),
-[Source Code](https://github.com/laserengineer/LabVIEW-Study.git)
 
-The right Structure is the easy solution for LabVIEW CLA exam. Six parallel process including:
+
+The following Structure is the easy solution for LabVIEW CLA exam. Six parallel process including:
 * Controller/Message Handler
 * User Console (GUI)
     * Simulator

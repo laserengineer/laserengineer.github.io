@@ -3,6 +3,7 @@ title: LabVIEW AF_9 Abstract Message in LabVIEW Actor Framework
 date: 2021-01-24
 categories:
   - Study
+  - LabVIEW
 tags:
   - LabVIEW
   - Actor
@@ -12,7 +13,7 @@ tags:
 First rule of coding - Just write the code. </span>
 </span>
 
-[Tom McQuillan Youtube Link](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth) , [LabVIEW Sample Code](https://github.com/laserengineer/LabVIEW-Study.git)
+[Tom McQuillan Youtue Channel](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth), [LabVIEW Sample Code](https://github.com/laserengineer/LabVIEW-Study.git)
 
 ## User Interfaces in Actor Framework and User Event Scripting
 

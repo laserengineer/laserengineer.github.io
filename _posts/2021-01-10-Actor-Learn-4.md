@@ -2,16 +2,17 @@
 title: LabVIEW AF_4 User Interface Basics with Actor Core Override
 categories:
   - Study
+  - LabVIEW
 tags:
   - LabVIEW
   - Actor
 ---
+<span style="color:red">
+<span style="font-size: 150%">
+First rule of coding - Just write the code. </span>
+</span>
 
-## User Interface Basics with Actor Core Override
-
-[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth)
-
-[LabVIEW Source Code](https://github.com/laserengineer/LabVIEW-Study.git)
+[Source](https://www.youtube.com/watch?v=2k3ZDwJolbA&list=PLmF-6jvwRvVNFzBjzh4bQDjFbv6lShcth), [LabVIEW Sample Code](https://github.com/laserengineer/LabVIEW-Study.git)
 
 ### First rule of coding - Just write the code
 
