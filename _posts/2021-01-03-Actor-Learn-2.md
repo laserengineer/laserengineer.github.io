@@ -15,8 +15,9 @@ Actor Core
 
 ### QDSM and QDMH Structure
 
-Queue-Driven State Machine is  comparable to Queue Driven Mesage handler
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/framework Change.png"> </p>
+Queue-Driven State Machine is comparable to Queue Driven Mesage handler
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Framework Change.png"> </p>
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/2.jpg"> </p>
 
@@ -50,7 +51,7 @@ Notes:
     * Create other limited Actor
 
 ### Actor.lv Class
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.PNG"> </p>
 
 Actor LabVIEW Class has 7 Vi for override
 

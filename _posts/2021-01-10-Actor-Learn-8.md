@@ -65,9 +65,12 @@ High cohesion and low coupling distinct modular design. AF works with object-ori
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Actor Layers.png"> </p>
 
 ### User Events for UI
-#### Install VI Package events_for_ui_actor_indicators-1.0.0.6.
+Install VI Package events_for_ui_actor_indicators-1.0.0.6. [Link](https://forums.ni.com/t5/Actor-Framework-Documents/Events-for-UI-Actor-Indicators/ta-p/3869260?profile.language=en)
 
-[Link](https://forums.ni.com/t5/Actor-Framework-Documents/Events-for-UI-Actor-Indicators/ta-p/3869260?profile.language=en)
+The VI screen show as following, it is not an official VI package.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Actor Layers.png"> </p>
+
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/vi package.png"> </p>
 
 #### Create UI Actor from UI template
