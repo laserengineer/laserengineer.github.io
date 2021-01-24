@@ -32,7 +32,7 @@ High cohesion and low coupling distinct modular design. AF works with object-ori
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Actor Hierarchy.png"> </p>
 
-1. Actor.SERVER
+1. Actor.Server
   * Launch New Chat Window()
   * Send Global Chat()
 
@@ -42,11 +42,9 @@ High cohesion and low coupling distinct modular design. AF works with object-ori
   * Format Messages()
   * Business Logic Methods()
 
-> Chat Window Model contains all of the business logic.
+> Chat Window Model contains all of the business logic. And each Chat Window Model Launches 1 user interface
 
-> Chat Window Model Launches 1 user interface
-
-3.Actor.Chat Room Controller
+3. Actor.Chat Room Controller
   * Update Addresses()
   * Update Message()
   * Update Who's Online()
@@ -60,9 +58,7 @@ High cohesion and low coupling distinct modular design. AF works with object-ori
   * Update Message()
   * Update Who's Online
 
-> The Chat Window Panel is a concrete implementation of a UI. However, to make a new UI. You would just have to make a sibling actor and override the update methods.
-
-> Apart from updating the UI. UI actors should have no additional responsibility
+> The Chat Window Panel is a concrete implementation of a UI. However, to make a new UI. You would just have to make a sibling actor and override the update methods. Apart from updating the UI. UI actors should have no additional responsibility
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Actor Layers.png"> </p>
 
