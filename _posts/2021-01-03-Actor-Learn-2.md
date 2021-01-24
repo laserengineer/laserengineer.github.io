@@ -77,10 +77,9 @@ The actor framework provides 7 Vis for override for furture development
 
 ### Actor Core
 
-
 Actor core.vi, Actors receive messages (to their inbox) and carryout tasks based on those messages. (Like a Queued Message Handler).
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top Core.png"> </p>
 
 Actor Brain = Message Handling Loop (MHL)
 
