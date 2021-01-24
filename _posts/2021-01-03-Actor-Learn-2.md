@@ -112,7 +112,9 @@ Pillars of OOP:
 
 In real application development, we need to abstract the Core.vi to Top ancestor's level
 
+
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top Core.png"> </p>
+
 
 This actor class the top ancestor's level and include the while loop within the Actor Core.vi method, set it as "Protect" to forbid external visit. Only child class is allowed to visit.
 
