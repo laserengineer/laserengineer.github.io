@@ -54,12 +54,13 @@ Notes:
     * Create other limited Actor
 
 ### Actor.lv Class
+
+The actor framework provides 7 Vis for override for furture development
+
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/7 VIs for Override.png"> </p>
 
-Actor LabVIEW Class has 7 Vi for override
-
-Notes:
 #### Actor Core = QDSM
+
 * The QDSM Shift register Cluster Name determine the actor name
 * Message Class is the Queue Element for QDSM
   * Different Queue Element refer to different Message Class
@@ -74,13 +75,12 @@ Notes:
     * Actor Class input -> QDSM Cluster
     * Each "Do.vi" will perform a method/operation on the Actor Class
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.png"> </p>
-
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/7 VIs for Override.png"> </p>
-
 ### Actor Core
 
+
 Actor core.vi, Actors receive messages (to their inbox) and carryout tasks based on those messages. (Like a Queued Message Handler).
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.png"> </p>
 
 Actor Brain = Message Handling Loop (MHL)
 
@@ -100,7 +100,7 @@ Use dynamic dispatch to replace case selector
 * Case "State" (Command) is replaced **message Class**
 * Data is wrapped into **Message private data** to get rid of variant
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/framework Change 2.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Framework Change 2.png"> </p>
 
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Class.png"> </p>
