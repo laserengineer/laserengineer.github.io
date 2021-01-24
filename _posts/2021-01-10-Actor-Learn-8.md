@@ -74,9 +74,10 @@ The VI screen show as following, it is not an official VI package.
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/vi package.png"> </p>
 
 Create UI Actor from UI template
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/UI Template.png"> </p>
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Chat Window Panel Actor.png"> </p>
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/8/UI Template.png"> </p>
+
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/8/Chat Window Panel Actor.png"> </p>
 
 The new Chat Window panel actor core has the override for and user event Register ,response and unregister.
 The Front Window will show when called and close afterwards
@@ -116,8 +117,8 @@ In Chat Room Model, the Chat Window Panel override the parent lvclass ChatRoom C
 
 Disable the Chat Room Controller core show font panel, it is called by Actor Chat Window Panel actor core. Or you can delete the invoke node like Tom McQuillan did.
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Disable Chat Room Controller Call.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Disable Chat Room Controller Call.png"> </p>
 
 PS:
 Small tricks to hide launch root actor front panel in development environment
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Launch Root Actor Trick.PNG "> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Launch Root Actor Trick.png "> </p>
