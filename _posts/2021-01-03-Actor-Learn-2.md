@@ -22,7 +22,7 @@ Queue-Driven State Machine is comparable to Queue Driven Mesage handler
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Framework Change.png"> </p>
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/2.jpg"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/2.png"> </p>
 
 Issues:
 
@@ -73,9 +73,10 @@ Notes:
   * Actor Class
     * Actor Class input -> QDSM Cluster
     * Each "Do.vi" will perform a method/operation on the Actor Class
-    
+
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Top core.jpg"> </p>
 
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.png"> </p>
 
 ### Actor Core
 
@@ -99,7 +100,6 @@ Use dynamic dispatch to replace case selector
 * Case "State" (Command) is replaced **message Class**
 * Data is wrapped into **Message private data** to get rid of variant
 
-
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/framework Change 2.png"> </p>
 
 
@@ -119,7 +119,7 @@ This actor class the top ancestor's level and include the while loop within the 
 All the child class actors inherit from Actor.lvclass and overwrite the Actor Core.vi for different parellel tasks. Note:
 * Child class Actor Core.vi need to keep invoke node for ancestor Actor Core.vi to ensure the message circulation
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/child actor core.jpg"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/child actor core.png"> </p>
 
 Elements of the Actor model
 
