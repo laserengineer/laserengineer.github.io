@@ -51,7 +51,7 @@ Notes:
     * Create other limited Actor
 
 ### Actor.lv Class
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/2/Override for Actor Core.png"> </p>
 
 Actor LabVIEW Class has 7 Vi for override
 
