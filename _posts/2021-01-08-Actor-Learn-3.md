@@ -23,13 +23,13 @@ In launch all the steps are finished very very fast, but the PopUp fuction still
 
 However, "Stop" was only dequeued and acted upon OK buttion is clicked on the dialog.
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/3/Takeaway.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/3/Takeaway.png"> </p>
 
 
 Actor stop based on an error code, for most part they stop for error code "43".
 
 Any error code will stop the actor.
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/3/First Actor.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/3/First Actor.png"> </p>
 
 The last part of code is completed first and then 5 seconds later "Hello World!"

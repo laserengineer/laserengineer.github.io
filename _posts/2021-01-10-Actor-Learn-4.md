@@ -44,12 +44,12 @@ The UI Loop is also called "Helper Loop"
 1. Start with Queue Driven State Machine
 To interact with user input, we need 2nd loop for event loop
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/Core_DQSM.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/Core_DQSM.png"> </p>
 
 
 2. QDSM with OOP
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/Core_DQSM_OOP.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/4/Core_DQSM_OOP.png"> </p>
 
 * Application Data is replaced, these data will determine Actor Name and data later
     * Complex.lvclass

@@ -20,7 +20,7 @@ This video includes:
 * Actor Core overrides
 * Stop Core overrides
 * Use both overrides to create, generate and destroy user events.
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/5/Server UI.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/5/Server UI.png"> </p>
 
 
 ### Function overview
@@ -44,21 +44,21 @@ More details to the Actor
   * Actor Core.vi -> Use the Reference
   * Stop Core.vi -> Release Reference (Override)
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/5/Pre-launch and Stop Core.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/5/Pre-launch and Stop Core.png"> </p>
 
 Start working on Overrides
 
-<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Server Overrides.PNG"> </p>
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Server Overrides.png"> </p>
 
 Pre-launch vi
-<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Pre-launch.PNG"> </p>
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Pre-launch.png"> </p>
 
 Stop Core.vi
-<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Stop Core.PNG"> </p>
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Stop Core.png"> </p>
 
 Server UI Block Diagram
 
-<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Server UI_Block Diagram.PNG"> </p>
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/5/Server UI_Block Diagram.png"> </p>
 
 After close the panel:
 * Actor is closed
