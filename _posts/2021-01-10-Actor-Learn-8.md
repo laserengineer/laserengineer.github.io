@@ -19,7 +19,7 @@ tags:
 
 <span style="color: Cyan">The reason for Actro.Chat Window Model (Top nested Actor, splitting User Interfaces and the business Logic. No need to recode the functionality when UI changes, only functions related to front panel controls and indicators are needed. All the hard work can remain the same in a completely different UI actor  ) </span>
 
-<span style="color: Cyan">The reason for Actor.Chat Room Controller (User control layer and UI Abstraction Layer)</span>
+<span style="color: Cyan">The reason for Actor.Chat Room Controller is reserved for future update (User control layer and UI Abstraction Layer)</span>
 
 <span style="color: Cyan">The reason for Actro.Chat Window Panel.UI (Concrete UI Implementation, could be modified separately updated in the future)</span>
 
@@ -111,7 +111,7 @@ In Chat Room Model, the Chat Window Panel override the parent lvclass ChatRoom C
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/New Nested Actor.png"> </p>
 
-Disable the Chat Room Controller core show font panel, it is called by Actor Chat Window Panel actor core. Or you can delete the invoke node like Tom McQuillan did. 
+Disable the Chat Room Controller core show font panel, it is called by Actor Chat Window Panel actor core. Or you can delete the invoke node like Tom McQuillan did.
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/8/Disable Chat Room Controller Call.PNG"> </p>
 
