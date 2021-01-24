@@ -77,7 +77,7 @@ The VI screen show as following, it is not an official VI package.
 
 Create UI Actor from UI template
 
-<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/8/UI Template.png"> </p>
+<p align="left"> <img src="/assets/images/LabVIEW Actor Framework/8/UI template.png"> </p>
 
 <p align="left"> <img src="/assets/images/LabVIEW Actor Framework/8/Chat Window Panel Actor.png"> </p>
 
