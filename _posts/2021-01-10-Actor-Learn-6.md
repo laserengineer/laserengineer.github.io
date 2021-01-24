@@ -20,7 +20,7 @@ tags:
 
 Actor Orientated Design (AOD), Root Actor (Calling Actor) and Nested Actors
 
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/6/Root Actor.PNG"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/6/Root Actor.png"> </p>
 
 Communication is created by saving Enqueuer to Actor Class Private Data.
 * Self-TO-Caller Enqueuer
@@ -58,7 +58,7 @@ Summarize the communication rule for Root Actor and Alpha, Beta Actor
 3. Beta Actor can only send message to Root and itself
 4. Alpha and beta can not send message to each other
 
-<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/No Comm Nested Actor.PNG"> </p>
+<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/No Comm Nested Actor.png"> </p>
 
 
 
@@ -70,11 +70,11 @@ Summarize the communication rule for Root Actor and Alpha, Beta Actor
 The 'Model' will be the 'Brains' of the Chat Room Windows. The 'Controller' is the user interface. I.e. what the user 'Controls'
 
 The output of launch nested actor is Nested Actor's Enqueuer. It returns the reference to the enqueuer. Use this reference to send messages to the newly launched actor. It is the child of Message Enqueuer.lvclass
-<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/Message Queue Class.PNG"> </p>
+<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/Message Queue Class.png"> </p>
 
 Structure of the application
-<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/Server Chat Room Model.PNG"> </p>
+<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/Server Chat Room Model.png"> </p>
 
 Message route  
 
-<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/Message Route.PNG"> </p>
+<p align="Left"> <img src="/assets/images/LabVIEW Actor Framework/6/Message Route.png"> </p>
