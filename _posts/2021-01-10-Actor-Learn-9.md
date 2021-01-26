@@ -22,9 +22,9 @@ First rule of coding - Just write the code. </span>
 Notes: </span>
 </span>
 
->The "Interface Message" is introduced into LabVIEW 2020. With multiple inheritance, we are no longer need to create an Abstract Message. This post is simply to keep the whole learning progress complete and help to understand the Actor framework more completely.
+>The "Interface Message" is introduced into LabVIEW 2020. With multiple inheritance, we no longer need to create an Abstract Message. This post is simply to keep the whole learning progress complete and help to understand the Actor framework more completely.
 
-Both Interface Message and Abstract Message approaches will be tried to complete the Chat room code. This article contains three methods of sending message from **Nest Actor** to **Calling Actor** will be introduced.
+Both Interface Message and Abstract Message approaches will be used. This article contains three methods of sending message from **Nest Actor** to **Calling Actor** will be introduced.
 * Caller Enqueuer (Not recommanded)
 * Abstract Message
 * Interface
