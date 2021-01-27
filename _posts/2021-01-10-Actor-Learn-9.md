@@ -63,11 +63,11 @@ To sum up, there are two parts in Abstract Message.
 2. The Calling Actor receive the message
 
 No dependency between Calling actor and Nested Actor, but there will be dependency between Nested Actor and Abstract Message.
-1. Create Abstract Message in Nested Actor
-2. Create Child Abstract Message in Calling Actor
-3. In Nested Actor, write the "Child Abstract Message" to Nested Actor calling method when button is clicked  
-4. Create a message for item 3 method
-5. Send item 4 message in the event loop
+1. Create Abstract Message in Nested Actor (what message to send)
+2. Create Child Abstract Message in Calling Actor (what to do after message)
+3. In Nested Actor, write the "Child Abstract Message" to Nested Actor calling method when button is clicked. (how to send the message)
+4. Create a message for item 3 method (how to send the message)
+5. Send item 4 message in the event loop (how to send the message)
 
 #### Create Abstract Message _Nested Actor
 
@@ -114,7 +114,7 @@ As we mentioned before, Calling Actor only care about the method/action of the m
 
 This "Update UI Msg.lvclass" (belong Calling Actor) should be send (in another way enqueued by Nested Actor)
 
-#### Create Message Implementation
+#### Create Message Implementation (Before Sending)
 
 Since the Nested Actor has no idea how the message is processed. **Before** the nested actor is launched, we need to write the message implementation that Calling Actor is going to execute when it receives this abstract message.
 
@@ -130,6 +130,46 @@ This is to override the "Message.lvclass:Do.vi", and execut the "Calling Actor.l
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Message Implementation3.png"> </p>
 
-More details of the code interval 
+More details of the code interval
+* Bundle message implementation into Nested Actor Data
+* The Message implementation is from Calling Actor
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Message Implementation4.png"> </p>
+
+Now we finish how the message will be handled, then we work on how to send the message
+
+#### Send Message Implementation
+
+After complete how the message is handled, we then work on how to send the message from Nested Actor.
+
+Create a method within Nested Actor.class named "Send updated String.vi" to send the data via abstract message to Calling Actor.
+It needs calling actor enqueuer and message implementation (or messge to use New Data Msg.lvcall) that
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Send AM.png"> </p>
+
+Things are a bit confusing here, we get clear again.
+* The Nested Actor has a method called _Write New Data Msg.vi_ (the same name as Abstract Message)
+* _Write New Data Msg.vi_ has a input _New Data Msg_ (which is also Nested Actor Data element)
+* In Calling Actor we have a method _Update UI_ and a message _Update UI Msg.lvclass_
+* In Calling Actor we send/connect _Update UI Msg.lvclass_ to _New Data Msg_ connector of _Write New Data Msg.vi_
+
+At this moment, we finish the method for send Message Implementation.
+Then we need to create a message for this method. (It is tricky part for me at all time, every method needs a message. And we need to create a message for message methods/operations)
+
+Right click _Send Update String.vi_ -> Actor Framework -> Create Message
+
+Then go find the message for this Actor and place "Send Send Updated String.vi"
+in the event structure of Nested Actor Core.
+
+We do not need the "Read Caller Enqueuer.vi" anymore, it is handled within the method of "Send updated String.vi"
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Send AM2.png"> </p>
+
+#### Finial Test
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Final Test.png"> </p>
+
+Although we still use the function "Read Caller Enqueuer", but the Abstract Message worked as medium that seperated the Calling Actor and Nested Actor.
+
+It is not straight forward for me even after many days of thinking, thankfully the new function "Interface" make the things a bit easier
+
+### Interface Method
