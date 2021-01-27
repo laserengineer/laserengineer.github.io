@@ -173,3 +173,79 @@ Although we still use the function "Read Caller Enqueuer", but the Abstract Mess
 It is not straight forward for me even after many days of thinking, thankfully the new function "Interface" make the things a bit easier
 
 ### Interface Method
+
+Interface can be considered as a class without attributes and with all methods being abstract. Interface is a definition class:
+* No code
+* No data structure 
+* Only empty methods to override
+* Own data type
+
+#### Create UI
+
+It is only available at LabVIEW 2020, the code is written as LabVIEW 2020 SP1.
+This is based on the UI Template, which is the VI package we used in Chapter 8.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Actor from Template.png"> </p>
+
+Only create the Event Support for the Calling Actor string indicator (Data Received)
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Add UI Event.png"> </p>
+
+#### Create Interface
+
+It is recommended to add an Interface Library first for file organization.
+
+Create Interface as creating class in Project and named the interface as "Send String".
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/New Interface.png"> </p>
+
+Then Create a "Data Received" method within Interface, since it is a abstract method, we need to use "VI" from Dynamic Dispatch Template
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Method.png"> </p>
+
+#### Set Calling Actor to Inheritance Interface
+
+As mentioned, Interface only define a abstract method, so we need Calling to inherit the Interface.
+
+Change Calling Actor Parent Interface to "Send String"
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Inheritance.png"> </p>
+
+Then Error will occur and we need to develop functions to override
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Inheritance Error.png"> </p>
+
+In Calling Actor.lvclass, right click New -> VI for Override ->
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Inheritance Override.png"> </p>
+
+The function/method  with "*" in front needs to be override
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Inheritance2.png"> </p>
+
+As we already create the event to update Calling Actor front panel, we could generate the event and pass the "Updated Data" to the event
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Inheritance Override2.png"> </p>
+
+The method implementation is finished. Then we need a message to execute this method from **Interface.lvlib**
+
+#### Create Message for Nested Actor
+
+Create the message for Data Received.vi within Interface.lvlib
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Override Message.png"> </p>
+
+It is the Nested Actor's task to send the "Data Update" message.
+With the help of Read Caller Enqueuer, we could simply put the interface within Nested Actor Event case.
+
+But for normalization and future coding, it is better to
+* Create a Nested Actor own method to perform "sending message"
+* Create a message for above method
+* Send above message within Nested Actor
+
+So we create a Nested Actor method named as "Data Update.vi", within this method we read caller enqueuer and use "Send Data Receive" from Interface libray
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Nested Actor Method.png"> </p>
+
+Then Create Msg for Data Update method within Nested Actor and put it into Nested Actor event structure.
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Nested Actor Message.png"> </p>
