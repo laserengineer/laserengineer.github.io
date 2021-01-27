@@ -176,7 +176,7 @@ It is not straight forward for me even after many days of thinking, thankfully t
 
 Interface can be considered as a class without attributes and with all methods being abstract. Interface is a definition class:
 * No code
-* No data structure 
+* No data structure
 * Only empty methods to override
 * Own data type
 
@@ -243,9 +243,30 @@ But for normalization and future coding, it is better to
 * Create a message for above method
 * Send above message within Nested Actor
 
-So we create a Nested Actor method named as "Data Update.vi", within this method we read caller enqueuer and use "Send Data Receive" from Interface libray
+So we create a Nested Actor method named as "Data Update.vi", within this method we read caller enqueuer and use "Send Data Receive" from Interface library
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Nested Actor Method.png"> </p>
 
 Then Create Msg for Data Update method within Nested Actor and put it into Nested Actor event structure.
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Nested Actor Message.png"> </p>
+
+Quick summary of work/data flow,
+
+1. After user click Send Calling Actor Message button
+2. Nested Actor enqueue send Data Update message
+3. **Data Update** message call its "Do.vi" which will use "Nested Actor.lvlib:Data Update.vi"
+4. Then "Nested Actor.lvlib:Data Update.vi" will call "Interface.lib:Data Received Msg.lvcalss: Send Data Received" (A message is sent)
+5.  "Interface.lib:Data Received Msg.lvcalss: Send Data Received" this message will call  "Interface.lib:Send String.lvclass: Data Receive.vi" (an Abstract method)
+6. The "Interface.lib:Send String.lvclass: Data Receive.vi" Abstract method is override by Calling Actor, which will generate an user event, then the event will update Call Actor UI
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Implementation.png"> </p>
+
+#### Result
+
+The result is shown as below, we are capble to send the message between Nested Actor and Calling Actor. And there is no dependency between Calling Actor and Nested Actor.
+
+The Interface.lviib become the dependency just as the Abstract Message.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Result1.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Result2.png"> </p>
+
+It takes a lot of step to ensure that Actors are independent between different Actors. 
