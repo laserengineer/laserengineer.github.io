@@ -50,3 +50,86 @@ For example, when we copy the Nested Actor in a new Project, then Calling Actor.
 So the Nested Actor is dependent on its Calling Actor, which we do not want. It is unable to reuse the Nest Actor due to coupling.
 
 "Send Update UI.vi" message tie two actors together.
+
+
+### Abstract Message
+
+"Abstract Message" is a method for Nested Actor and Calling Actor communication without dependency. (Before LabVIEW 2020)
+
+In this case, Nested Actor only in charge of sending message and does not care who receive the message and how the receiver (the Calling Actor) perform upon the information. And Nested actor is not going to find out. Calling Actor only in charge of receiving and action, does not care who send the message.
+
+To sum up, there are two parts in Abstract Message.
+1. The Nested Actor sending the message
+2. The Calling Actor receive the message
+
+No dependency between Calling actor and Nested Actor, but there will be dependency between Nested Actor and Abstract Message.
+1. Create Abstract Message in Nested Actor
+2. Create Child Abstract Message in Calling Actor
+3. In Nested Actor, write the "Child Abstract Message" to Nested Actor calling method when button is clicked  
+4. Create a message for item 3 method
+5. Send item 4 message in the event loop
+
+#### Create Abstract Message _Nested Actor
+
+In Nested Actor Library, Create Abstract Message for caller.
+Right Click Nested Actor.lvclass -> Actor Framework -> Create Abstract Message for Caller
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Create AMC.png"> </p>
+
+Enter a name for the New Message
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/New Abstract Message.png"> </p>
+
+Then define the attributes to the new message, in this case, only a string control is needed (it could be replaced by Cluster for the future project). Then click "Create Message".
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/New Abstract Message1.png"> </p>
+
+The Abstract Message "New Data Msg.lvcalss" for Calling Actor is automatically created
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/New Abstract Message2.png"> </p>
+
+It is worthy mentioning that New Data Msg.lvclass is the **direct** child of LabVIEW Message.lvclass, although owned by Nested Actor.lvlib, it is a dependent class **NOT** owned by Nester Actor.class   
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/New Abstract Message3.png"> </p>
+
+As mentioned before, Nestted Actor only care about sending message, so there is only "Send New Data.vi", **NO** "Do.vi" in this lvclass. So the nested actor created an "Abstracted Layer".
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/New Abstract Message4.png"> </p>
+
+#### Create Abstract Message _Calling Actor
+
+Nested Actor has created the sending message function and have no idea how the message will be handled, now it's Calling Actor turn to create a method that we want to execute when we receive a message from Nested Actor. In our case, we want to **Update UI.vi** to execute when a message saying a data is available.
+
+Right click **Update UI.vi**-> Actor Framework -> Create Child of Abstract Message
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Child of AM.png"> </p>
+
+Select the parent class -> the message class (New Data Msg.lvclass),  we created from Nested Class.
+Then we have creatd the "Update UI Msg.lvclass" which is the child of "New Data Msg.lvclass"
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Child of AM2.png"> </p>
+
+As we mentioned before, Calling Actor only care about the method/action of the message, it does not care about the message source. So in this "Update UI Msg.lvclass", we only have the "Do.vi" , no message sending function.
+
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Child of AM3.png"> </p>
+
+This "Update UI Msg.lvclass" (belong Calling Actor) should be send (in another way enqueued by Nested Actor)
+
+#### Create Message Implementation
+
+Since the Nested Actor has no idea how the message is processed. **Before** the nested actor is launched, we need to write the message implementation that Calling Actor is going to execute when it receives this abstract message.
+
+LabVIEW has scripting a vi "Write New Data Msg.vi" when we create the abstract message for caller
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Message Implementation.png"> </p>
+
+In Calling Actor before Nested Actor is launched, use "Write New Data Msg" to pass "Update UI Msg.lvclass"
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Message Implementation2.png"> </p>
+
+This is to override the "Message.lvclass:Do.vi", and execut the "Calling Actor.lvlib:Update UI Msg.lvcalss"
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Message Implementation3.png"> </p>
+
+More details of the code interval 
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Abstract Message/Message Implementation4.png"> </p>
