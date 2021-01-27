@@ -1,6 +1,6 @@
 ---
 title: LabVIEW AF_9 Abstract Message in LabVIEW Actor Framework
-date: 2021-01-24
+date: 2021-01-27
 categories:
   - Study
   - LabVIEW
@@ -269,4 +269,4 @@ The Interface.lviib become the dependency just as the Abstract Message.
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Result1.png"> </p>
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/9/Interface/Interface Result2.png"> </p>
 
-It takes a lot of step to ensure that Actors are independent between different Actors. 
+It takes a lot of step to ensure that Actors are independent between different Actors.
