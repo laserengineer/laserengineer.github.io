@@ -1,5 +1,5 @@
 ---
-title: Rondo Alla Turca Practice Progress
+title: Daniel Piano Practice Record
 date: 2021-02-01
 categories:
   - Life
