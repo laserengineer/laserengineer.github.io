@@ -11,13 +11,26 @@ tags:
 ## Practice Progress Record
 
 This is simply side practice record beyond regular MYC class progress.
-[Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
+[Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
+
+## Fantasia in C Major by Dmitri Kabalevsky
+
+Georg Philipp Telemann - Fantasia in C Major, RCM Grade 5
+
+2021-02-01
+
+Daniel couldn't slow down for his own reason, so it is simply for fun with a few known misplays.
+Over 20+ attempts and got this final version in the end.
+
+{% include video id="BV1tK4y1p7py" provider="bilibili" %}
+{% include video id="Txvdg2UKkvc" provider="youtube" %}
+
 
 ## Prelude op 39 no 19 by Dmitri Kabalevsky
 
 Prelude, Op. 39 No. 19 by Dmitri Kabalevsky (Level 5 Etude No. 1) from the Royal Conservatory of Music 2015 Piano Celebration Series.
 
-2021-02-01
+2021-01-31
 
 {% include video id="BV1Xo4y1R7J8" provider="bilibili" %}
 {% include video id="pogMkISCWF8" provider="youtube" %}
