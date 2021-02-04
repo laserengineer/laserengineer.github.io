@@ -13,7 +13,7 @@ tags:
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
-## Fantasia in C Major by Dmitri Kabalevsky
+## Fantasia in C Major by Georg Philipp Telemann
 
 Georg Philipp Telemann - Fantasia in C Major, RCM Grade 5
 
@@ -28,8 +28,7 @@ Over 20+ attempts and got this final version in the end.
 
 ## Prelude op 39 no 19 by Dmitri Kabalevsky
 
-Prelude, Op. 39 No. 19 by Dmitri Kabalevsky (Level 5 Etude No. 1) from the Royal Conservatory of Music 2015 Piano Celebration Series.
-
+Prelude, Op. 39 No. 19 by Dmitri Kabalevsky (Level 5 Etude No. 1) from the Royal Conservatory of Music 2015 Piano Celebration Series. 
 2021-01-31
 
 {% include video id="BV1Xo4y1R7J8" provider="bilibili" %}
