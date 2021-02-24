@@ -16,8 +16,17 @@ This is simply side practice record beyond regular MYC class progress.
 ## Sonatina in F Major 1st Movement by Ludwig van Beethoven
 
 The Sonatina in F is a composition for solo piano in two movements, attributed to Ludwig van Beethoven (listed as Anh. 5 No. 2 in the Kinsky–Halm Catalogue), though doubtful.
+Side practice beyond MYC program.
 
+2021-02-23
+Test Release version
 {% include video id="fh_QZxpfOxk" provider="youtube" %}
+
+
+2021-02-15
+Draft version
+{% include video id="5eC5AOyCkyE" provider="youtube" %}
+
 
 
 ## Fantasia in C Major by Georg Philipp Telemann
