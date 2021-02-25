@@ -21,6 +21,7 @@ Side practice beyond MYC program.
 2021-02-23
 Test Release version
 {% include video id="fh_QZxpfOxk" provider="youtube" %}
+{% include video id="BV14K4y1H7JU" provider="bilibili" %}
 
 
 2021-02-15
