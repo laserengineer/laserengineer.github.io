@@ -13,6 +13,11 @@ tags:
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
+## No Worries by Elissa Milne
+RCM piano repertoire grade 5 2015 Celebration Series
+2021-04-17
+{% include video id="qU0C7f5AvTQ" provider="youtube" %}
+
 ## Sonatina in F Major by Ludwig van Beethoven
 
 The Sonatina in F is a composition for solo piano in two movements, attributed to Ludwig van Beethoven (listed as Anh. 5 No. 2 in the Kinsky–Halm Catalogue), though doubtful.
