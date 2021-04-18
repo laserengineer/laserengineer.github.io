@@ -14,8 +14,10 @@ This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
 ## No Worries by Elissa Milne
-RCM piano repertoire grade 5 2015 Celebration Series
 2021-04-17
+
+RCM piano repertoire grade 5 2015 Celebration Series
+
 {% include video id="qU0C7f5AvTQ" provider="youtube" %}
 
 ## Sonatina in F Major by Ludwig van Beethoven
