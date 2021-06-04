@@ -45,4 +45,61 @@ Address != Identity
 ## Actor system Communications
 
 Obviously my head is not designed for under Actor Framework, fail into sleep multiple times.
-We can not simply combine LabVIEW Actor framework with actor model 
+We can not simply combine LabVIEW Actor framework with actor model
+
+
+In LabVIEW an Actor is a while loop that capble  to
+* Create new actors
+* Receive messages (dequeue)
+** Make local decision (case structure)
+** Perform actions
+* Processes exactly one message at a time
+* Send messages
+
+Actor is always Asynchronous Call
+
+## Actor Principle
+
+### 1. Actors can receive any message at any time
+* An actor has control over who has its address
+* Each actor sends msgs on its own schedule
+* Actors must reactor to unexpected messages gracefully
+
+### 2. Actors are self- deterministic
+* An actor is responsible for itself
+* Messages are always requests, never commands
+* Thins are not done to an actor; an actor does things to itslef
+
+### 3. Actor use Hierarchical structure
+* Promotes encapsulation
+* Easier to reason about the behavior
+* Better scalability
+
+Actors encapsulate data, procedures and threads
+Actors cannot predict the next message
+Actor Design != Actor system Design
+
+Actors encapsulate data, procedures, and threads
+Actors cannot predict the next message
+Actor Design != Actor System Design
+
+## Actor Tips
+### 1. Each MHL is a new actor
+* Behaviors define actor, not artifactors (VI, Lvlib, etc.)
+* MHL is the actor's public interface
+* Usually maintains all actor state data
+
+### 2. Each actor entails development overhead
+* All actors need exit conditions and error handling, implement these features first
+
+### 3. Not All Loops Are Actors
+* Some processes are not conducive to MHL
+* Delegated to "Helper Loops"
+
+### 4. Actor works best when the MHL has to wait
+* MSG processing time << Time between msg
+* MHL should handle every message "instantly"
+** Do not use it as a job queue
+** Priority messages are unnecessary
+** Use the *Helper Loop* as Job Processor
+** The MHL is only for *Message handling*, the slow process/work should be handled by Helper Loop. MHL is the actor's brain (commander), helper loops and sub actors are the arms and legs doing the heavy lifting. 
