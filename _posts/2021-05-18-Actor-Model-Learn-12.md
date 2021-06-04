@@ -99,7 +99,17 @@ Actor Design != Actor System Design
 ### 4. Actor works best when the MHL has to wait
 * MSG processing time << Time between msg
 * MHL should handle every message "instantly"
-** Do not use it as a job queue
-** Priority messages are unnecessary
-** Use the *Helper Loop* as Job Processor
-** The MHL is only for *Message handling*, the slow process/work should be handled by Helper Loop. MHL is the actor's brain (commander), helper loops and sub actors are the arms and legs doing the heavy lifting. 
+* Do not use it as a job queue
+* Priority messages are unnecessary
+* Use the *Helper Loop* as Job Processor
+* The MHL is only for *Message handling*, the slow process/work should be handled by Helper Loop. MHL is the actor's brain (commander), helper loops and sub actors are the arms and legs doing the heavy lifting.
+* Do not try to do much in your MHL, delegate to sub actors and helper Loops
+
+## Actor Framework Features
+
+* Uses inversion of Control to guarantee safe execution
+* Priority Queues for inter - actor communication
+** Actor's address is its queue refnum
+* MHL provided by the framework
+* Actors are launched dynamically
+* Actors are multi-instanced
