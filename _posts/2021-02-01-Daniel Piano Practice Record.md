@@ -1,6 +1,6 @@
 ---
 title: Daniel Piano Practice Record
-date: 2021-04-17
+date: 2021-06-06
 categories:
   - Life
 tags:
@@ -12,6 +12,20 @@ tags:
 
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
+
+## MYC Moonbeam 3 Graduation Recital
+2021-06-05
+
+Sonatina in C Major
+* op 36 no 3 by Muzio Clementi
+
+Für Elise
+*  WoO 59 by Ludwig van Beethoven
+{% include video id="tQnqE9uT1t4" provider="youtube" %}
+
+Für Elise performed 2 years ago
+{% include video id="CCZRJIAym5U" provider="youtube" %}
+
 
 ## No Worries by Elissa Milne
 2021-04-17
