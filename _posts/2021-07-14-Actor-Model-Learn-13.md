@@ -73,3 +73,36 @@ LabVIEW Actor Framework (AF) is just an implementation of the Actor Model in Lab
 | The Data     |Actor Class |State Information is stored in the Actor's private data  |
 | The Queue|   AF Message Queue   |   The Message Classes wrap a priority Queue   |
 | The Message Handler |    The Actor Core Method    |  Actor.lvclass: Actor Core.vi has the message handling loop inside it. New Message are added by overriding classes and methods|
+| The Messages|   Message Classes  |   Message Classes all inherit from a common class. Each message has its own unique data associated with it|
+
+This gets us all of the PROS from the QMH (state data encapsulation and separate thread execution) while implementing all of the stuff of OO QMH section.
+
+What is the cons?
+* There are a lot of classes. The project may not modularization
+* Code is harder to read. It takes a while to figure out how to read a blokc diagram for an actor.  
+
+## Actor Framework Classes
+
+The AF does a lot in the background, the framework code to make everything happen is very complicated and confusing. So it is easy to see *WHAT it DOES* instead of *HOW it Works*.
+
+### Actor.lvclass
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Actor-Icon1.png"> </p>
+This is the main point of extension for the framework. Each QMH that we want to implement will be a child of the Actor Class, so the Actor.lvclass is the parent class for all the QMH. Notice that there aren't really many public methods. All of your extension and use will come form overriding the protected methods and adding methods to your child implementations.
+
+### The Message Queue
+
+ * This queue is a bit complicated for good reasons.
+ The first thing need to know that it is a priority queue , when we message an actor you , three priorities: Low, Normal and High will be assigned.There is another "secret" priority of Critical but is only used by the framework.
+
+ * This priority queue is wrapped in a few classes:
+ ** Enqueuer
+ ** Dequeuer, these are known as the queue pairs
+ ** These pairs wrap the same queue reference deep down, but give us a way to encapsulate limited functionality of the queue.
+** We could control someone's access for enqueue by providing enqueuer.
+** We could also control some's access for dequeue by providing dequeuer.
+
+** In general, you'll never see the dequeuer side of the queue (it's used inside the framework though), and you'll pass around the enqueuer side to everyone who needs it.  
+
+### The Message Class
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Message-Icon1.png"> </p>
