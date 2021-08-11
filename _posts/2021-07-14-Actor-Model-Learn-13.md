@@ -106,3 +106,19 @@ This is the main point of extension for the framework. Each QMH that we want to 
 ### The Message Class
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Message-Icon1.png"> </p>
+
+Every message that we send an actor will inherit from message class. When the receiving actor handles the message (it happens in Actor Core.vi) it will call the **Do.vi** method of the Message Class. So new messages just need to override this Do.vi to perform the target actions.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Do-Method1.png"> </p>
+
+That being said, the messages class are **NOT** related to the actor class (it's a Association or "Uses" OO relationship).
+
+So what can messages do to the actor objects? They can only call public methods which means that normally all a message class is doing is calling one public method of actor. The act of creating a message class and writing the "Do" method is pretty well scripted so you almost never actually have to manually create this code. The now workflow is to create the actor method then run the scripting code that create a message class for that method.
+
+# Part 3 - Launching and Communicating
+
+Launching an actor is the process of starting up the message handling loop of the actor. When an actor is launched a new thread is created (or a VI run asynchronously in LabVIEW Speak) and the message queue references are created for access the queue. An important concept that when working with actors is that actors can launch more actors. The first actor in the chain is known as **Root Level Actor**. A root level actor may launch another actor known as Nested Actor. A nested actor can launch more nested actors.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Launch-Actor-Method1.png"> </p>
+
+Notice how all threads are created as need. The means that we don't have to decide at design time how many or what kind of actors to launch. Your program can wait until the user clicks a button or a DAQ value is read or any other condition is met. Then launch an appropriate actor to handle it. This is extremely powerful when creating highly dynamic applications. When you launch an actor you will get a reference to it's message Enqueuer. This is what you will use to send message to your actor. 
