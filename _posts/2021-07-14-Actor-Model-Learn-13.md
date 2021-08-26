@@ -117,8 +117,35 @@ So what can messages do to the actor objects? They can only call public methods 
 
 # Part 3 - Launching and Communicating
 
+## Launching Actors
+
 Launching an actor is the process of starting up the message handling loop of the actor. When an actor is launched a new thread is created (or a VI run asynchronously in LabVIEW Speak) and the message queue references are created for access the queue. An important concept that when working with actors is that actors can launch more actors. The first actor in the chain is known as **Root Level Actor**. A root level actor may launch another actor known as Nested Actor. A nested actor can launch more nested actors.
 
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Launch-Actor-Method1.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Launch-Nested-Actor.png"> </p>
 
-Notice how all threads are created as need. The means that we don't have to decide at design time how many or what kind of actors to launch. Your program can wait until the user clicks a button or a DAQ value is read or any other condition is met. Then launch an appropriate actor to handle it. This is extremely powerful when creating highly dynamic applications. When you launch an actor you will get a reference to it's message Enqueuer. This is what you will use to send message to your actor. 
+Notice how all threads are created as need. The means that we don't have to decide at design time how many or what kind of actors to launch. Your program can wait until the user clicks a button or a DAQ value is read or any other condition is met. Then launch an appropriate actor to handle it. This is extremely powerful when creating highly dynamic applications. When you launch an actor you will get a reference to it's message Enqueuer. This is what you will use to send message to your actor.
+
+## Messaging Actors
+
+When an actor has been launched, we could send message to this launched actor by using its Enqueuer. By using the Enqueue method of the Message Enqueuer class. If people using the scripting tools methods to help you send messages will be scripted for you. These will make sure all your messages contain the correct data and the message class is correctly constructed. Actors can easily send themselves messages. They just a reference to their own message queue. They can get that using the "Read Self Enqueuer" Actor Message.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Read-Self-Method1.png"> </p>
+
+Once you've done with your actor you need to tell it to stop. Built into the framework are the stop and Emergency stop message, either of these will cause the message handler loop to stop.
+
+## Actor Messaging Actors
+
+When an actor launches a nested actor, it will almost always also send message to it. It can do that easily using the message queue reference that it gets when the actor is launched. It is often useful for a nexted actor to send a message back up the chain. You can get your calling actor's message queue using the "Read Caller Enqueuer" Actor method.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Read-Caller-Method1.png"> </p>
+
+Most of the time this is how the communication between actors works, the Root Actor is talking to its nested actors. Those nested actors talk to their nested actors, etc. You end up getting this sort of pyramid ship of actors running.
+
+It is possible for actors to communicate directly with actors not above or below it in the pyramid, but you (as implementer of all the actors) are responsible for passing around the message enqueuer reference as needed to this happen.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Actor-Pyramid1.png"> </p>
+
+Now we should begin to see the power of the framework. We can design each actor to be a small, well defined, easily testable piece of code. Then we can create another actor that launches our small actors, and another actor above that launches that actor...until we have a very complex system. The problem is you have a lot of loops running all messaging each. It is easy to get into a "wait, what's actually running right now" situation. Well people really tired of that.
+
+# Part 4 - Being Productive with Actors
