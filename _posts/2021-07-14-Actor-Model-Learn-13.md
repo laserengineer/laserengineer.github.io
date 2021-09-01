@@ -149,3 +149,61 @@ It is possible for actors to communicate directly with actors not above or below
 Now we should begin to see the power of the framework. We can design each actor to be a small, well defined, easily testable piece of code. Then we can create another actor that launches our small actors, and another actor above that launches that actor...until we have a very complex system. The problem is you have a lot of loops running all messaging each. It is easy to get into a "wait, what's actually running right now" situation. Well people really tired of that.
 
 # Part 4 - Being Productive with Actors
+
+Now we know that Actors are really just object oriented Queued Message Handles, and we know how to start the message handling of actor and how to message that loop. Now we need to know how to actually get stuff down using actors.
+
+## Actors are Objects, so let's extend them.
+An actor is implemented as an LVClass. This means that if we want to extend it's functionality all we need to do is override some methods.
+
+### "Classic" OO Extension
+
+Message for our actors are just method calls on the actor object. We could make those methods dynamic dispatch if needed. Next we can create child versions of that actor that all implement the dynamic dispatch VI differently. This means we can send the same message to different actors and they will handle the message as they see fit.
+
+For example, let's create a "Logger.lvclass" Actor. This actor can handle one message called "Log". This takes a string input with the string to be logged.
+
+So if we crate a Dynamic Dispatch **Log.vi** for my "Logger" actor and create a message for that method. Now we can create a "CSV Logger.lvclass" that extended my "logger" Actor and create and override **"LOG.vi"** with the CSV functionality. That means when we launch a CSV Logger, anyone can send it a Log Messaged and it would be logged to a CSV format.
+
+We can also create a "TXT Logger.lvclass" that extend our "Logger" Actor and it will handle the log message differently.
+
+Things to remember, for a well-designed class means any method that can be called on the parent, we can call it on the child (the Liskov Substituion-Principle). Actors are classes, so they follow the same rules.
+
+### Helper loops
+
+In general what we need is more than a QMH where a Producer Consumer type architecture is more practical and helpful. This can be achieved in AF by overriding the framework method called "Actor core". Actor core is marked as a "Must call to Parent" VI. This is because the parent is our message handling loop.
+
+So if we override it, we can get **additional** loops running alongside our message handler.
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Helper-Loop.png"> </p>
+Notice, how the help loop is stopped when the parent actor core stops
+
+Helper loops are what do the bulk of the work for your actor, it does most of the heavy lifting jobs.
+ * Need a user interface for the actor-> Put the event handler in a helper loop
+ * Need to read from a DAQ device -> Perform the read in the helper loop.
+  * The helper loop will probably need to message actor core using the "Read Self Enqueuer" method.
+  * The actor core may need to message helper loop as well
+  * It is up to designer to decide what communication mechanism is appropriate for this.
+
+Things to remember that, once we started the helper loop, we are responsible for stopping it. The framework takes care of stopping the message handler loop, which is inside the call parent actor core node, but we need to stop our helper loop(s) when it's time. If we fail to do this, we will end up with an actor running in the background that we can't communicate with. This is often the most frustrating part of working with actors, but once we make the mistake a few times we will remember to be on the lookout for it.
+
+### Doing work in Messages vs in Helper loop
+
+Our actor can only handle one message at a time. The actor core will dequeue these message in the order they came in (respecting the priority). Each message will call a method on the Actor object.
+
+If we were to put code that takes a long time to execute in that message, we will delay the handling of the next message until the slow code is done. That means that any other message (even ones that are higher in priority) won't be handled promptly. The AF doesn't make any promises about timing, but in in general we would like to handle messages quickly.
+
+To accomplish this, you we should put all of the long running code inside a helper loop. Our actor core will tell our helper loop what to do (via all of LabVIEW'S normal interprocess communication tools) and then it will go back to handling messages. Our helper loop will then take the time to actually perform the task. This allows our message handler to be nice and prompt while still allowing our actor to do a lot of work. 
+
+For example: We have a file that needs to be processed. It is a pretty big file that takes several seconds to open, read and analyzed. If we just executed our "Analyze" code in the AF messages, then there would absolutely no way to talk to the actor until the analyze code is done.  What if I needed to abort it? It would be impossible.
+
+ So instead, we could create a helper loop that would perform the analysis. Now when our actor received the "Analyze" mothod it would just send the file to the helper loop, then go back to wait for messages. The helper loop would then start working through the file. No if our actor core received an "Abort" message it could again message up the help loop and tell it to stop. Somework will be build in some mechnisms to make these actions work, but it is possible and easier to debug.
+
+
+### Relationship Between Helper and Message Handler Loops
+
+One of the main goals for the Actor Framework is to create chunks of code that are loosely coupled (or ideally, not coupled at all) to the rest of our code. The more we can separate loops, the easier it will be to debug your code. This means that each actor will be one thing. It has a small, public interface that other pieces of code can call into.
+
+Each actor should be loosely coupled to other actors. This is not, however, how your helper loops should be related to your message handler loop. The helper loop SHOULD be tightly coupled to your message handler loop. There should be references shared between the two loops, queues that are expected to be flushed at the right time or any other communication scheme we need. This tight coupling between the loops is what will allow us to get so much done so quickly.
+
+We, as the designer of our actor, are responsible for making sure we don't do something dumb that cause errors. And it is a reasonable thing for us to do since the helper and message handler loops are parts of our actor
+
+### Other Overridable Methods
