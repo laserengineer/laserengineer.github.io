@@ -1,6 +1,6 @@
 ---
 title: 2021-07-14-Actor-Model-Learn-13
-date: 2021-07-14
+date: 2021-09-02
 categories:
   - Study
   - LabVIEW
@@ -191,7 +191,7 @@ Our actor can only handle one message at a time. The actor core will dequeue the
 
 If we were to put code that takes a long time to execute in that message, we will delay the handling of the next message until the slow code is done. That means that any other message (even ones that are higher in priority) won't be handled promptly. The AF doesn't make any promises about timing, but in in general we would like to handle messages quickly.
 
-To accomplish this, you we should put all of the long running code inside a helper loop. Our actor core will tell our helper loop what to do (via all of LabVIEW'S normal interprocess communication tools) and then it will go back to handling messages. Our helper loop will then take the time to actually perform the task. This allows our message handler to be nice and prompt while still allowing our actor to do a lot of work. 
+To accomplish this, you we should put all of the long running code inside a helper loop. Our actor core will tell our helper loop what to do (via all of LabVIEW'S normal interprocess communication tools) and then it will go back to handling messages. Our helper loop will then take the time to actually perform the task. This allows our message handler to be nice and prompt while still allowing our actor to do a lot of work.
 
 For example: We have a file that needs to be processed. It is a pretty big file that takes several seconds to open, read and analyzed. If we just executed our "Analyze" code in the AF messages, then there would absolutely no way to talk to the actor until the analyze code is done.  What if I needed to abort it? It would be impossible.
 
@@ -204,6 +204,60 @@ One of the main goals for the Actor Framework is to create chunks of code that a
 
 Each actor should be loosely coupled to other actors. This is not, however, how your helper loops should be related to your message handler loop. The helper loop SHOULD be tightly coupled to your message handler loop. There should be references shared between the two loops, queues that are expected to be flushed at the right time or any other communication scheme we need. This tight coupling between the loops is what will allow us to get so much done so quickly.
 
-We, as the designer of our actor, are responsible for making sure we don't do something dumb that cause errors. And it is a reasonable thing for us to do since the helper and message handler loops are parts of our actor
+We, as the designer of our actor, are responsible for making sure we don't do something dumb that cause errors. And it is a reasonable thing for us to do since the helper and message handler loops are parts of our actor.
 
-### Other Overridable Methods
+### Other Over-ridable Methods
+
+In addition to actor core, there are some other overridable methods. See the list below for information
+
+#### Pre-launch Init
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Pre-Launch-Method1.png"> </p>
+
+ * **Executed** while your actor is being launched. All of the communication references are valid in this VI.
+ * **Override** when you need to initialize something for your actor, a lot of the time you will initialize references in this VI.
+  * References created here will have the same lifetime as our actor
+  * If we need to send ourselves a message before anyone else, send it in this VI
+  * Wiring an error to "Error Out" will cause following actor not to launch. The code that tried to launch the actor will get this error from the "Error Out" terminal of the launch actor. Use this to let your caller know if couldn't launch. For example, if we failed to open a log file that our actor needs to work
+
+* **DO NOT** launch a nested actor in pre-launch init. That will create a deadlock.
+  * Launch nested actors in our actor core.  
+
+#### Stop Core
+
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Stop-Core-Method1.png"> </p>
+
+* **Executed** when your message handler loop stops running
+* **Override** when you need to perform some clean up action at the end of execution. This can also useful for stopping your helper loops
+
+#### Handle Error
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Handle-Error-Method.png"> </p>
+
+* **Executed** when a message returns an error. This method is responsible for determing when the actor's message handler loops stops
+* **Override** when you want to implement your won error handling
+  * By default, the actor will stop itself on all errors
+  * Note: When a Stop message is received, you'll get an Error Code 43 in your handle error (a critical error will be 1608). A lot of times the error handling code will clear all errors. If you do this your actor will **never stop**. You need to clear all errors, but wire a true to the "Stop Actor" output if the error code is 43 or 1608
+
+#### Handle Last Ack Core
+
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Last-Ack-Method1.png"> </p>
+
+* **Executed** when a "Last Ack" message is received. Every time an actor stops execution it will send its status up to its caller as a "Last Ack"
+* **Override** if you need to perform an action when a nested actor has stopped
+* The last Ack message has the following information
+    * The error information that stopped the actor
+    * The Actor's final value
+    * The actors caller-to actor enqueuer (this was the actor's self enqueuer)
+
+#### Substitute Actor
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Substitute-Method1.png"> </p>
+* **Executed**
+* **Override**
+#### Receive Message
+* **Executed**
+* **Override**
+#### Drop Message Core
+* **Executed**
+* **Override**
