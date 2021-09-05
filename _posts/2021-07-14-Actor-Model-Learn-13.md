@@ -253,11 +253,21 @@ In addition to actor core, there are some other overridable methods. See the lis
 
 #### Substitute Actor
 <p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Substitute-Method1.png"> </p>
-* **Executed**
-* **Override**
+
+* **Never Executed** directly by the framework. You have to decide when to run this method
+* It is possible to change the actor's type inside a message. This is useful when implementing the State Design Pattern
+* When changing states you may need to copy over some private data to the new state.**Override** this method to copy over this private data.
+
 #### Receive Message
-* **Executed**
-* **Override**
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Receive-Method1.png"> </p>
+
+* **Executed** every time a message is received by the actor but before the message is handled
+* **Override** when you need to perform an action on the method before it is handled
+* This is very rarely overridden, mostly only while debugging
+
 #### Drop Message Core
-* **Executed**
-* **Override**
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Message-Drop-Method1.png"> </p>
+
+* Part of Message.lvclass
+* **Executed** when a message is leftover on the message queue after an actor has stopped. This can happen when an actor is stopped before it is done handling all of the messages in its queue.
+* **Override** when you need to perform an action if a message gets dropped. Most messages (messages containing all By-Value fields) do not need any special drop handling. Usually you will only need to handle this case when a message is passing off the lifetime of a By-Ref item
