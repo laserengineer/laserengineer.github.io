@@ -5,7 +5,7 @@ categories:
 tags:
   - link
   - Laser
-permalink: /Research Work/
+permalink: /Laser Research Work/
 link: https://era.library.ualberta.ca/items/6851f565-bfeb-4dc1-a6b9-538eaab194a1/view/a280fb0a-3a1d-474d-bb98-74a58176efe0/Yu_Yang_201409_MSc.pdf
 ---
 ### Passively Mode-locked Diode-pumped Yb<sup>3+</sup>:CaF<sub>2</sub> Oscillator
