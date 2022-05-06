@@ -13,6 +13,16 @@ tags:
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
+2022-04-25
+## 2022 Edmonton Music & Speech Arts Festival
+* Sonatina in F Major - Anton Diabelli
+* Rondo Alla Turca (modified) - Sonata No. 11 - Wolfgang Amadeus Mozart
+* Für Elise - Ludwig van Beethoven
+
+72108 - Piano Solo - Recital - 8 and Under.
+{% include video id="X-fEICiGxnk" provider="youtube" %}
+
+
 2021-12-24
 ## Sonatina in F Major op. 168 no. 1
 * Anton Diabelli (RCM Level 4 Repertoire List B) from the Royal Conservatory of Music 2015 Piano Celebration Series.
