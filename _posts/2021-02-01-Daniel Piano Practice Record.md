@@ -13,6 +13,14 @@ tags:
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
+2022-06-10
+## 2022 MYC Year End Recital
+* Sonatina in F Major - Anton Diabelli
+* Rondo Alla Turca - Sonata No. 11 - Wolfgang Amadeus Mozart
+
+{% include video id="_rf3AAAYxgU" provider="youtube" %}
+
+
 2022-04-25
 ## 2022 Edmonton Music & Speech Arts Festival
 * Sonatina in F Major - Anton Diabelli
