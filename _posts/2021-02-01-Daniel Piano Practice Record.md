@@ -15,8 +15,8 @@ This is simply side practice record beyond regular MYC class progress.
 
 2022-06-10
 ## 2022 MYC Year End Recital
-* Sonatina in F Major - Anton Diabelli
 * Rondo Alla Turca - Sonata No. 11 - Wolfgang Amadeus Mozart
+* Sonatina in F Major - Anton Diabelli
 
 {% include video id="_rf3AAAYxgU" provider="youtube" %}
 
