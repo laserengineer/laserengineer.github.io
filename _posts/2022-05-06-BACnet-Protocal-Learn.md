@@ -12,16 +12,29 @@ tags:
 
 [Learn notes for BACnet MS/TP](https://www.neptronic.com/controls/PDF/EVC/BACnetModbus/BACnet%20MSTP%20Overview%20Manual-160405.pdf)
 
-[Understanding BACnet](https://www.youtube.com/watch?v=oevGXrkxEos&list=PL2Sd_0UX_Ck4ezaB9vMazMCsF0GbM8C9e&index=1&ab_channel=ContemporaryControls)
 
+![BACnet-Logo-R](/assets/BACnet-Logo-R.gif)
 
 # Part 1 - Theory about BACnet  
 ## What is Bacnet
 
-The BACnet (Building Automation and Control Network)
+
+
+The BACnet is abbreviation for Building Automation and Control Network and this post has 0 intention to cover the details for the technology. It is served as learning notes for potential BACnet LabVIEW development. In general, two types of BACnet communication protocals are used 
+
+- [x] **BACnet serial MSTP**, it is usually the type defined cluster on the left shift register. Everything about the internal state of QMH is stored here
+- [x] The **Queue**, this is how you get data into the QMH and tell QMH what task to do
+
+it  not this document intension to cover  
+
+
+
+![12-12-56-25_BACnet Stack Layers no BG](/assets/12-12-56-25_BACnet%20Stack%20Layers%20no%20BG.png)
+
+
 
 QMH design pattern has the following parts
-<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Classic-QMH.png"> </p>
+<p align="center"> <img src="/assets/images/LabVIEW Actor Framework/13/Classic-QMH.png"> 
 
 - [x] The **Data**, it is usually the type defined cluster on the left shift register. Everything about the internal state of QMH is stored here
 - [x] The **Queue**, this is how you get data into the QMH and tell QMH what task to do
