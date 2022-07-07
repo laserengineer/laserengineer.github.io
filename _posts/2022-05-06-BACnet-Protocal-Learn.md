@@ -1,6 +1,6 @@
 ---
-title: BACnet_MS/TP-Protocal-Learn
-date: 2021-09-02
+title: BACnet-Protocal-Learn
+date: 2022-07-07
 categories:
   - Study
   - LabVIEW
@@ -10,39 +10,127 @@ tags:
   - BACnet MS/TP
 ---
 
-[Learn notes for BACnet MS/TP](https://www.neptronic.com/controls/PDF/EVC/BACnetModbus/BACnet%20MSTP%20Overview%20Manual-160405.pdf)
-
 
 ![BACnet-Logo-R](/assets/BACnet-Logo-R.gif)
-
 # Part 1 - Theory about BACnet  
 ## What is Bacnet
 
 ![12-12-56-25_BACnet Stack Layers no BG](/assets/12-12-56-25_BACnet%20Stack%20Layers%20no%20BG.png)
 
+This post has **ZERO intention** to cover the details for the technology. It solely served as learning notes for potential BACnet COMM module development in LabVIEW development.
 
-The BACnet is abbreviation for Building Automation and Control Network and this post has 0 intention to cover the details for the technology. It is served as learning notes for potential BACnet LabVIEW development. In general, two types of sub communication protocals are used. There are no proprietary chip sets or special electronics required to implement. Thus, BACnet meets the needs of users, integrators, and equipment vendors. BACnet defines a set of standard objects whose properties represent the information that is exchanged between components of the system network and an application layer protocaol that is used to access and maniplulate this information. 
+The BACnet is abbreviation for Building Automation and Control Network and it is both an international (ISO) and ANSI standard for interoperability between cooperating building automation devices.BACnet addresses the goal of interoperability by defining a generalized model of how automation devices work, a method for describing the information that they contain, and a method for describing protocols that one device can use to ask another device to perform some desired action. 
+
+<p align="center">
+
+![BACnet communication architecture](/assets/BACnet%20communication%20architecture.PNG)
+</p>
+
+BACnet uses an object-oriented model for abstracting and representing information.The object-based model has been proven to be both robust and reliable while providing a high degree of backward and forward complatibility. 
+
+  In general, two types of networking options are used. There are no proprietary chip sets or special electronics required to implement. Thus, BACnet meets the needs of users, integrators, and equipment vendors. BACnet defines a set of standard objects whose properties represent the information that is exchanged between components of the system network and an application layer protocaol that is used to access and maniplulate this information. 
 
 - [x] **BACnet serial MSTP**
 - [x] **BACnet/IP network**
 
 The communication protocal consists a set of rules that monitors data that is exchanged between devices, enubale communication among devices in a network. 
 
-To communication between devices, the BACnet protocal uses **services** and **objects**. One device has multiple objects and one object has multiple property 
+To communication between devices, the BACnet protocal uses **services** and **objects**. One device could have a collection of objects and each object has a collection of properties. Each property includes at least a name and a value. For example one of the standard BACnet objects is the Analog Input Object which represents an analog sensor input such as a thermistor.   
 
-* **Service**
-  A service is a means or interface between two devices to access and process information, request to perform an action, or inform the devices that some event has taken place. These are used for discovering devices and objects, and for sharing data. BACnet protocol defines “services”. These include object access services, alarm and event services, file access services, and a few more. Object access services are the most commonly used since these provide the fundamental “read/write” access to object properties
-  Some services example
->* Who-Is (Device and Object Discovery)
->* I-Am (Device and Object Discovery)
->* etc.
+Below diagram of an Analog Input Object that includes Description, Device_Type, Units are set during installation. Others, including Present_Value and Out_Of_Service provides status about the sensor input represent by the Analog Input Objects. An Analog input object can have up to 25 properties. in this example, a query about the Present_Value Property of this Analog Input Object would get the reply "68.0".
+
+![BACnet AI Objects](/assets/BACnet%20AI%20Objects.gif)
+
+
+* **Devices**
+  
+  A BACnet device is often comprised of a microprocessor-based controller and software combination is the designed to undertand and use the BACnet protocal. Each device contains a **device object** (and other objects) that defines certain device information including the device object identifier or instance number. The instance number must be field-configurable to be unique across the entire BACnet network. For brevity this number called *device instance*. 
+  
+  BACnet requires one Device Object to be present in every BACnet device.he Device Object's Instance number must be unique across the entire BACnet internetwork because it is used to uniquely identify the BACnet devices. It may be used to conveniently identify the BACnet device from other devices during installation.
+
+    **Properties of the Device Object.**
+
+
+| PROPERTY                        | BACnet   | EXAMPLE                                          |
+|---------------------------------|----------|--------------------------------------------------|
+| Object_Identifier               | Required | Device #1076                                     |
+| Object_Name                     | Required | "Office 36 DD Control"                           |
+| Object_Type                     | Required | Device                                           |
+| System_Status                   | Required | Operational (plus others)                        |
+| Vendor_Name                     | Required | "Alerton Technologies, Inc."                     |
+| Vendor_Identifier               | Required | Alerton                                          |
+| Model_Name                      | Required | "VAV-DD Controller"                              |
+| Firmware_Revision               | Required | "1.0"                                            |
+| Application_Software_Version    | Required | "Dual-Duct DDC"                                  |
+| Location                        | Optional | "Office 36, Floor 3"                             |
+| Description                     | Optional | "(on network 5)"                                 |
+| Protocol_Version                | Required | 1 (BACnet protocol version)                      |
+| Protocol_Conformance_Class      | Required | 2                                                |
+| Protocol_Services_Supported     | Required | readProperty, writeProperty, atomicWriteFile,... |
+| Protocol_Object_Types_Supported | Required | Analog Input, Analog Output,...                  |
+| Object_List                     | Required | Analog Input #1, Analog Input #2, ...            |
+| Max_APDU_Length_Supported       | Required | 50 (bytes or characters)                         |
+| Segmentation_Supported          | Required | No                                               |
+| VT_Classes_Supported            | Optional | n/a                                              |
+| Active_VT_Sessions              | Optional | n/a                                              |
+| Local_Time                      | Optional | 12:30:15.22                                      |
+| Local_Date                      | Optional | Tuesday, March 12, 1996                          |
+| UTC_Offset                      | Optional | +480 (minutes from GMT/UTM)                      |
+| Daylight_Savings_Status         | Optional | False (not in effect)                            |
+| APDU_Segment_Timeout            | Optional | n/a                                              |
+| APDU_Timeout                    | Required | 3000 milliseconds                                |
+| Number_Of_APDU_Retries          | Required | 0                                                |
+| List_Of_Session_Keys            | Optional | n/a                                              |
+| Time_Synchronization_Recipients | Optional | n/a                                              |
+| Max_Master                      | Optional | n/a                                              |
+| Max_Info_Frames                 | Optional | n/a                                              |
+| Device_Address_Binding          | Required | None                                             |
+
+
+
+
+
+* **Devices Interoperability**
+  BACnet divides the task of device interoperability into three distinct areas: Objects (information), Services (action requests), and Transport systems (internetworking, electronic messages). BACnet defines methods and requirements for implementation of each of these areas
 
 * **Object**
-  BACnet devices are defined on the network as a collection of “objects”.The general reference to sensors, actuators, and other functional elements that make up a BACnet device. The objects fall into categories pecified by BACnet protocol. Analog Input object and Analog Ouput object are a couple of the most commonly used objects.
+  BACnet devices are defined on the network as a collection of “objects”. The BACnet standard defines 54 different standard object types and implementation of a given device may make use of arbitrary combinations of these standard object types to represent information and control logic.
+  
+  Each oject is identified with an object identifier and an object identifier is a 32-bit binary number. 
+  The general reference to sensors, actuators, and other functional elements that make up a BACnet device. The objects fall into categories specified by BACnet protocol. Analog Input object and Analog Ouput object are a couple of the most commonly used objects.
+
+
+**Standard BACnet Objects**
+
+| OBJECT             | EXAMPLE OF USE                                                                                                                                                                                                              |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Analog Input       | Sensor input                                                                                                                                                                                                                |
+| Analog Output      | Control output                                                                                                                                                                                                              |
+| Analog Value       | Setpoint or other analog control system parameter                                                                                                                                                                           |
+| Binary Input       | Switch input                                                                                                                                                                                                                |
+| Binary Output      | Relay output                                                                                                                                                                                                                |
+| Binary Value       | Binary (digital) control system parameter                                                                                                                                                                                   |
+| Calendar           | Defines a list of dates, such as holidays or special events, for scheduling.                                                                                                                                                |
+| Command            | Writes multiple values to multiple objects in multiple devices to accomplish a specific purpose, such as day-mode to night-mode, or emergency mode.                                                                         |
+| Device             | Properties tell what objects and services the device supports, and other device-specific information such as vendor, firmware revision, etc.                                                                                |
+| Event Enrollment   | Describes an event that might be an error condition (e.g., "Input out of range") or an alarm that other devices to know about. It can directly tell one device or use a Notification Class object to tell multiple devices. |
+| File               | Allows read and write access to data files supported by the device.                                                                                                                                                         |
+| Group              | Provides access to multiple properties of multiple objects in a read single operation.                                                                                                                                      |
+| Loop               | Provides standardized access to a "control loop."                                                                                                                                                                           |
+| Multi-state Input  | Represents the status of a multiple-state process, such as a refrigerator's On, Off, and Defrost cycles.                                                                                                                    |
+| Multi-state Output | Represents the desired state of a multiple-state process (such as It's Time to Cool, It's Cold Enough and it's Time to Defrost).                                                                                            |
+| Notification Class | Contains a list of devices to be informed if an Event Enrollment object determines that a warning or alarm message needs to be sent.                                                                                        |
+| Program            | Allows a program running in the device to be started, stopped, loaded and unloaded, and reports the present status of the program.                                                                                          |
+| Schedule           | Defines a weekly schedule of operations (performed by writing to specified list of objects with exceptions such as holidays. Can use a Calendar object for the exceptions.                                                  |
+
 
 * **Object Property**
 
-  Each object has/include several properties required by BACnet protocol.The messages on the network deal with reading and writing Object Properties. The most commonly used protperty is **Present Value**. An object along with its set of properties describes the current status of a device to the other devices on the network. Objects enable ,reading, writing and perform the desired functions of a device. 
+  Each object has/includes several properties required by BACnet protocol.Each property contains two pieces of information.
+  * Property Identifier
+  * Property Value 
+  
+  The messages on the network deal with reading and writing Object Properties. The most commonly used protperty is **Present Value**. An object along with its set of properties describes the current status of a device to the other devices on the network. Objects enable ,reading, writing and perform the desired functions of a device. 
 
 
 >* Analog Input
@@ -53,7 +141,52 @@ To communication between devices, the BACnet protocal uses **services** and **ob
 >* Device
 >* etc.
 
-The BACnet MS/TP protocol uses EIA-485 (RS-485) as the physical layer standard for data transmission. Controllers also use the BACnet MS/TP protocol over an RS-485 standard for communicating with third party routers, gateways, or master controllers. 
+
+![BACnet Objects Properties](/assets/BACnet%20Objects%20Properties.PNG)
+
+
+**Properties of the Analog Input Object.**
+
+
+| PROPERTY           | BACnet   | EXAMPLE                                                      |
+|--------------------|----------|--------------------------------------------------------------|
+| Object_Identifier  | Required | Analog Input #1                                              |
+| Object_Name        | Required | "AI 01"                                                      |
+| Object_Type        | Required | Analog Input                                                 |
+| Present_Value      | Required | 68.0                                                         |
+| Description        | Optional | "Outside Air Temperature"                                    |
+| Device_Type        | Optional | "10k Thermistor"                                             |
+| Status_Flags       | Required | In_Alarm, Fault, Overridden, Out_Of_Service flags            |
+| Event_State        | Required | Normal (plus various problem-reporting states)               |
+| Reliability        | Optional | No_Fault_Detected (plus various fault conditions)            |
+| Out_Of_Service     | Required | False                                                        |
+| Update_Interval    | Optional | 1.00 (seconds)                                               |
+| Units              | Required | Degrees-Fahrenheit                                           |
+| Min_Pres_Value     | Optional | -100.0, minimum reliably read value                          |
+| Max_Pres_Value     | Optional | +300.0, maximum reliably read value                          |
+| Resolution         | Optional | 0.1                                                          |
+| COV_Increment      | Optional | Notify if Present_Value changes by increment: 0.5            |
+| Time_Delay         | Optional | Seconds to wait before detecting out-of-range: 5             |
+| Notification_Class | Optional | Send COV notification to Notification Class Object: 2        |
+| High_Limit         | Optional | +215.0, Upper normal range                                   |
+| Low_Limit          | Optional | -45.0, Lower normal range                                    |
+| Deadband           | Optional | 0.1                                                          |
+| Limit_Enable       | Optional | Enable High-limit-reporting, Low-limit-reporting.            |
+| Event_Enable       | Optional | Enable To_Offnormal, To_Fault, To_Normal change reporting.   |
+| Acked_Transitions  | Optional | Flags indicating received acknowledgments for above changes. |
+| Notify_Type        | Optional | Events or Alarms                                             |
+
+* **Service**
+
+  BACnet services are formal requests that one BACnet device sends to another BACnet device to ask it to do something. 
+  A service is a means or interface between two devices to access and process information, request to perform an action, or inform the devices that some event has taken place. These are used for discovering devices and objects, and for sharing data. BACnet protocol defines “services”. These include object access services, alarm and event services, file access services, and a few more. Object access services are the most commonly used since these provide the fundamental “read/write” access to object properties
+  Some services example
+>* Who-Is (Device and Object Discovery)
+>* I-Am (Device and Object Discovery)
+>* etc.
+![BACnet Service](/assets/BACnet%20Service.gif)
+The model of objects and services is realized by encoding messages into a stream of numeric codes that represent the desired functions or services to be performed. d. The "language" of this encoding is common to all BACnet devices. BACnet devices exchange information and do things by sending and receiving electronic messages containing this coded language. 
+
 
 ## Addressing
 ### Baud Rate 
