@@ -11,11 +11,11 @@ tags:
 ---
 
 
-![BACnet-Logo-R](/assets/BACnet-Logo-R.gif)
+![BACnet-Logo-R](/assets/BACnet/BACnet-Logo-R.gif)
 # Part 1 - Theory about BACnet  
 ## What is Bacnet
 
-![12-12-56-25_BACnet Stack Layers no BG](/assets/12-12-56-25_BACnet%20Stack%20Layers%20no%20BG.png)
+![12-12-56-25_BACnet Stack Layers no BG](/assets/BACnet/12-12-56-25_BACnet%20Stack%20Layers%20no%20BG.png)
 
 This post has **ZERO intention** to cover the details for the technology. It solely served as learning notes for potential BACnet COMM module development in LabVIEW development.
 
@@ -23,7 +23,7 @@ The BACnet is abbreviation for Building Automation and Control Network and it is
 
 <p align="center">
 
-![BACnet communication architecture](/assets/BACnet%20communication%20architecture.PNG)
+![BACnet communication architecture](/assets/BACnet/BACnet%20communication%20architecture.PNG)
 </p>
 
 BACnet uses an object-oriented model for abstracting and representing information.The object-based model has been proven to be both robust and reliable while providing a high degree of backward and forward complatibility. 
@@ -39,7 +39,7 @@ To communication between devices, the BACnet protocal uses **services** and **ob
 
 Below diagram of an Analog Input Object that includes Description, Device_Type, Units are set during installation. Others, including Present_Value and Out_Of_Service provides status about the sensor input represent by the Analog Input Objects. An Analog input object can have up to 25 properties. in this example, a query about the Present_Value Property of this Analog Input Object would get the reply "68.0".
 
-![BACnet AI Objects](/assets/BACnet%20AI%20Objects.gif)
+![BACnet AI Objects](/assets/BACnet/BACnet%20AI%20Objects.gif)
 
 
 * **Devices**
@@ -142,7 +142,7 @@ Below diagram of an Analog Input Object that includes Description, Device_Type, 
 >* etc.
 
 
-![BACnet Objects Properties](/assets/BACnet%20Objects%20Properties.PNG)
+![BACnet Objects Properties](/assets/BACnet/BACnet%20Objects%20Properties.PNG)
 
 
 **Properties of the Analog Input Object.**
@@ -184,7 +184,7 @@ Below diagram of an Analog Input Object that includes Description, Device_Type, 
 >* Who-Is (Device and Object Discovery)
 >* I-Am (Device and Object Discovery)
 >* etc.
-![BACnet Service](/assets/BACnet%20Service.gif)
+![BACnet Service](/assets/BACnet/BACnet%20Service.gif)
 The model of objects and services is realized by encoding messages into a stream of numeric codes that represent the desired functions or services to be performed. d. The "language" of this encoding is common to all BACnet devices. BACnet devices exchange information and do things by sending and receiving electronic messages containing this coded language. 
 
 
@@ -240,7 +240,7 @@ You will initialize the main class based on the type of BACnet device you want t
 You will also need to initialize a BACnet object for **each object** you want to talk to using "Object.lvclass:Initialize B.IP Object.vi" or the generic "Object.lvclass:Initialize.vi". The class returned from this initialize will be an input to any reads or writes.
 
 
-![Initialize BIP](/assets/Initialize%20BIP.png)
+![Initialize BIP](/assets/BACnet/Initialize%20BIP.png)
 
 "IP Address" is the local IP address you want the UDP connection to be opened on.
 
@@ -255,7 +255,7 @@ You will also need to initialize a BACnet object for **each object** you want to
 "BACnet Out" (output) is the BACnet class used for all other API methods.
 
 
-![Initialize MSTP Master](/assets/Initialize%20MSTP%20Master.png)
+![Initialize MSTP Master](/assets/BACnet/Initialize%20MSTP%20Master.png)
 
 "VISA" is the reference to the serial port you want your device to reside on.
 
@@ -265,8 +265,8 @@ You will also need to initialize a BACnet object for **each object** you want to
 
 "BACnet Out" (output) is the BACnet class used for all other API methods.
 
-![Initialize BACnet Object](/assets/Initialize%20BACnet%20Object.png)
-![Initialize BACnetIP Object](/assets/Initialize%20BACnetIP%20Object.png)
+![Initialize BACnet Object](/assets/BACnet/Initialize%20BACnet%20Object.png)
+![Initialize BACnetIP Object](/assets/BACnet/Initialize%20BACnetIP%20Object.png)
 
 "Remote IP Address" is the IP address of the device you want to read from or write to.
 
@@ -281,10 +281,10 @@ You will also need to initialize a BACnet object for **each object** you want to
 "Object Out" (output) is the BACnet object used in the read and write methods
 
 
-![BACnet Write](/assets/BACnet%20Write.png)
+![BACnet Write](/assets/BACnet/BACnet%20Write.png)
 "BACnet In" is the BACnet class and it must be initialized before being called here.
 
-"Object In" is the object you want to write to. See "Initialize B.IP Object.vi".
+"Object In" is the object you want to write to. See "Initialize B.IP Object".
 
 "Property (Present Value)" is the property of "Object In" that you want to write to. This enum contains all of the properties in the BACnet specification, but only Present Value has been thoroughly tested.
 
@@ -294,7 +294,7 @@ You will also need to initialize a BACnet object for **each object** you want to
 
 "BACnet Out" (output) is the BACnet class used for all other API methods.
 
-![BACnet Read](/assets/BACnet%20Read.png)
+![BACnet Read](/assets/BACnet/BACnet%20Read.png)
 
 "BACnet In" is the BACnet class and it must be initialized before being called here.
 
@@ -308,5 +308,31 @@ You will also need to initialize a BACnet object for **each object** you want to
 
 "Value" (output) is the value of the property that you read from
 
-![BACnet Close](/assets/BACnet%20Close.png)
+![BACnet Close](/assets/BACnet/BACnet%20Close.png)
 "BACnet In" is the BACnet class used for all other API methods. Each initialized instance should be closed when it is no longer needed.
+# Part 3 - Example Demo 
+## Simulation Steps 
+
+1. Download “Yet Another Bacnet Explorer-Yabe” from [Yabe](https://sourceforge.net/projects/yetanotherbacnetexplorer/)
+2. Open "Bacnet.Room.Simulator" that is installed with Yabe (Yabe\AddOn folder)
+   * ![Room Control Simulator](/assets/BACnet/Room%20Control%20Simulator.png)
+   * Noticte that BACnet device ID will change if multiple instance of the application is opened
+3. Add devices in Yabe OVER UDp
+   * ![Yabe add device](/assets/BACnet/Yabe%20add%20device.png)
+   * Simulated device IP will show up when you hover the mouse
+     *  ![Simulator Info](/assets/Simulator%20Info.png)
+  
+  
+4. Find the **Object Instance** on the top right corner
+   * Object Instance is "0" as set point 
+     * ![BACnet Property](/assets/BACnet/BACnet%20Property.PNG)
+  
+5. Set the following information on LabVIEW B.IP Test Read from  "C:\Program Files (x86)\National Instruments\LabVIEW 2021\examples\Endigit\Endigit BACnet API"
+   * Set Local IP
+   * Set Remote IP (same on the same PC)
+   * Object Instance to "0"
+   * Object Type "Analog Value"
+   * Property "Present Value"
+   * Click "Run" and you will see "70" on the Value indicator
+
+        * ![LabVIEW Read Example](/assets/LabVIEW%20Read%20Example.PNG)
