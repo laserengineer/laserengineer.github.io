@@ -23,7 +23,7 @@ The BACnet is abbreviation for Building Automation and Control Network and it is
 
 <p align="center">
 
-![BACnet communication architecture](/assets/BACnet/BACnet%20communication%20architecture.PNG)
+![BACnet communication architecture](/assets/BACnet/BACnet%20communication%20architecture.png)
 </p>
 
 BACnet uses an object-oriented model for abstracting and representing information.The object-based model has been proven to be both robust and reliable while providing a high degree of backward and forward complatibility. 
