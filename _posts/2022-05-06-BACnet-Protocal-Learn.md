@@ -21,11 +21,7 @@ This post has **ZERO intention** to cover the details for the technology. It sol
 
 The BACnet is abbreviation for Building Automation and Control Network and it is both an international (ISO) and ANSI standard for interoperability between cooperating building automation devices.BACnet addresses the goal of interoperability by defining a generalized model of how automation devices work, a method for describing the information that they contain, and a method for describing protocols that one device can use to ask another device to perform some desired action. 
 
-<p align="center">
-
-![BACnet communication architecture](/assets/BACnet/BACnet%20communication%20architecture.png)
-</p>
-
+![BACnet communication architecture](/assets/BACnet%20communication%20architecture_mz0250ng3.PNG)
 BACnet uses an object-oriented model for abstracting and representing information.The object-based model has been proven to be both robust and reliable while providing a high degree of backward and forward complatibility. 
 
   In general, two types of networking options are used. There are no proprietary chip sets or special electronics required to implement. Thus, BACnet meets the needs of users, integrators, and equipment vendors. BACnet defines a set of standard objects whose properties represent the information that is exchanged between components of the system network and an application layer protocaol that is used to access and maniplulate this information. 
