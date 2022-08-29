@@ -13,6 +13,14 @@ tags:
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
+2022-08-29
+## Recent Practice
+* A piece of bread and butter - Wolfgang Amadeus Mozart
+{% include video id="_omHbYxDaq-0" provider="youtube" %}
+
+* Gentle Brezze - Joanne Bender
+{% include video id="E_A_jMXC91c" provider="youtube" %}
+
 2022-06-10
 ## 2022 MYC Year End Recital
 * Rondo Alla Turca - Sonata No. 11 - Wolfgang Amadeus Mozart
