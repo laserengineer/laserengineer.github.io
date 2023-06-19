@@ -13,6 +13,24 @@ tags:
 This is simply side practice record beyond regular MYC class progress.
 [Full Youtube Playlist](https://www.youtube.com/watch?v=UNdBBvAVJe8&list=PLJNxQ3sAMnhInFduYd45ZafTAVgPkfcCJ)
 
+2023-06-19
+## 2023 Piano School Recital 
+* Summer Joe Hisaishi
+{% include video id="-hw3bzNG_gY" provider="youtube" %}
+
+
+2023-05-29
+## 2023 Edmonton Music & Speech Arts Festival
+* Moonlight Mood - William Gillock
+{% include video id="tYAXQSlIe_M" provider="youtube" %}
+
+* Sonatina No 1 in C Major K 439b "Viennese " IV. Allegro and Peace Country Hoedown
+{% include video id="HJHyCbkPyxo" provider="youtube" %}
+
+* Solo in F Major: Bourrée - TWV 32
+{% include video id="8ddOXEneTpw" provider="youtube" %}
+
+
 2022-08-29
 ## Recent Practice
 * A piece of bread and butter - Wolfgang Amadeus Mozart
