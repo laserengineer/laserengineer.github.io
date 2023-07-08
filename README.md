@@ -1,4 +1,4 @@
-My site that help me to leave something useful/meaningful to the world.
+My site that helps me to leave something useful/meaningful to the world.
 
 Special thanks:
 Minimal Mistakes remote theme is used for this site building.
